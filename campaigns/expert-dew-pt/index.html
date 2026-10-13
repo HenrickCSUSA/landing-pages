@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Dew Point Measurement Solutions | CS INSTRUMENTS USA</title>
+    <meta name="description" content="Precision dew point sensors and mobile meters from CS INSTRUMENTS. Ensure optimal compressed air quality with accurate moisture measurement, long-term stability, and quick response times.">
+    <link rel="canonical" href="https://www.cs-instruments.com/us/dew-point-measurement">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://js.hsforms.net/forms/embed/43972642.js" defer></script>
+
+    <style>
+        :root {
+            --primary:      #009b77;
+            --primary-dark: #007f61;
+            --mint:         #52ffd3;
+            --forest:       #0b3129;
+            --light-bg:     #f4f7f6;
+            --body-text:    #2d3748;
+            --muted-teal:   #b7d8cd;
+            --border:       #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+        }
+
+        body { font-family: 'Inter', sans-serif; color: var(--body-text); line-height: 1.6; background: #ffffff; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* REVEAL */
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .reveal.delay-1 { transition-delay: 0.1s; }
+        .reveal.delay-2 { transition-delay: 0.2s; }
+        .reveal.delay-3 { transition-delay: 0.3s; }
+        .reveal.delay-4 { transition-delay: 0.4s; }
+
+        /* HEADER */
+        header {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: saturate(180%) blur(10px);
+            -webkit-backdrop-filter: saturate(180%) blur(10px);
+            padding: 15px 0 25px;
+            border-bottom: 4px solid var(--primary);
+            position: sticky; top: 0; z-index: 1000;
+            transition: box-shadow 0.3s ease, padding 0.3s ease;
+        }
+        header.scrolled { box-shadow: 0 6px 24px rgba(0,0,0,0.07); padding: 10px 0 18px; }
+        .header-row { display: flex; justify-content: space-between; align-items: center; }
+        .logo { height: 48px; width: auto; display: block; fill: #009b77; transition: transform 0.3s ease, opacity 0.3s ease; }
+        .logo-link:hover .logo { transform: scale(1.04); opacity: 0.9; }
+        .header-cta-wrap { display: flex; align-items: center; }
+        .header-call-btn { padding: 12px 24px; font-size: 0.95rem; }
+        .header-call-btn i { margin-right: 8px; }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 16px 32px; background: var(--primary); color: #ffffff;
+            border: 2px solid var(--primary); border-radius: 6px;
+            font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600;
+            text-decoration: none; cursor: pointer; position: relative; overflow: hidden;
+            transition: background 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.15s;
+            box-shadow: 0 4px 14px rgba(0,155,119,0.28);
+        }
+        .btn:hover { background: var(--primary-dark); border-color: var(--primary-dark); box-shadow: 0 6px 20px rgba(0,155,119,0.36); transform: translateY(-1px); }
+        .btn:active { transform: translateY(0); }
+        .btn-outline { background: transparent; color: var(--primary); box-shadow: none; }
+        .btn-outline:hover { background: rgba(0,155,119,0.06); color: var(--primary-dark); border-color: var(--primary-dark); box-shadow: none; }
+        .btn .ripple { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.35); transform: scale(0); animation: rippleAnim 0.6s linear; }
+        @keyframes rippleAnim { to { transform: scale(4); opacity: 0; } }
+
+        /* HERO */
+        .hero-section {
+            background: linear-gradient(135deg, #0d3d30 0%, #0b3129 45%, #0f4a3a 100%);
+            padding: 80px 0 70px;
+            position: relative; overflow: hidden;
+        }
+        .hero-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 70% 50%, rgba(0,155,119,0.18) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(82,255,211,0.12); border: 1px solid rgba(82,255,211,0.35);
+            border-radius: 50px; padding: 6px 16px;
+            font-size: 0.82rem; font-weight: 600; color: var(--mint);
+            letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 20px;
+            animation: heroFadeUp 0.7s ease both;
+        }
+        .hero-section h1 {
+            font-size: clamp(1.9rem, 3.2vw, 2.8rem); font-weight: 700;
+            color: #ffffff; line-height: 1.15; margin-bottom: 18px;
+            animation: heroFadeUp 0.7s 0.15s ease both;
+        }
+        .hero-section h1 span { color: var(--mint); }
+        .hero-sub {
+            font-size: 1.05rem; color: rgba(255,255,255,0.78);
+            line-height: 1.65; margin-bottom: 34px;
+            animation: heroFadeUp 0.7s 0.25s ease both;
+        }
+        .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; animation: heroFadeUp 0.7s 0.35s ease both; }
+
+        @keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes gentleBob {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .hero-image-card {
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            background: rgba(255,255,255,0.08); border-radius: 16px;
+            padding: 40px; text-align: center;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+            animation: heroFadeUp 0.8s 0.2s ease both;
+            border: 1px solid rgba(82,255,211,0.15);
+        }
+        .product-image {
+            width: 200px; height: 160px; object-fit: contain;
+            margin-bottom: 16px; border-radius: 8px;
+            animation: gentleBob 3s ease-in-out infinite;
+            filter: drop-shadow(0 8px 16px rgba(0,0,0,0.3));
+        }
+
+        @media (max-width: 768px) {
+            .hero-section { padding: 56px 0 48px; }
+            .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+            .hero-section h1 { font-size: 1.75rem; }
+        }
+
+        /* FORM SECTION */
+        .form-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0d3d30 0%, #0b3129 100%);
+            position: relative; overflow: hidden;
+        }
+        .form-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(0,155,119,0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .form-section-header { text-align: center; margin-bottom: 56px; }
+        .form-section-header h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; color: #ffffff; margin-bottom: 12px; }
+        .form-section-header p { font-size: 1.05rem; color: rgba(255,255,255,0.72); }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; align-items: start; }
+        @media (max-width: 768px) { .form-grid { grid-template-columns: 1fr; } }
+
+        .form-card-meet { background: #ffffff; border-radius: 16px; padding: 44px 40px; box-shadow: 0 24px 60px rgba(0,0,0,0.25); }
+        .card-icon { font-size: 2.2rem; color: var(--primary); margin-bottom: 20px; }
+        .form-card-meet h3 { font-size: 1.6rem; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
+        .form-card-meet > p { font-size: 0.95rem; color: #55635c; margin-bottom: 24px; }
+        .meet-bullets { list-style: none; margin-bottom: 32px; display: flex; flex-direction: column; gap: 10px; }
+        .meet-bullets li { display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; color: var(--body-text); }
+        .meet-bullets li i { color: var(--primary); font-size: 0.9rem; margin-top: 4px; flex-shrink: 0; }
+
+        .form-card-call { background: #ffffff; border-radius: 16px; padding: 44px 40px; box-shadow: 0 24px 60px rgba(0,0,0,0.25); }
+        .form-card-call h3 { font-size: 1.6rem; font-weight: 700; color: #1a1a1a; margin-bottom: 8px; }
+        .form-card-call .card-sub { font-size: 0.95rem; color: #55635c; margin-bottom: 28px; }
+
+        .phone-link-big {
+            display: flex; align-items: center; gap: 12px;
+            background: rgba(0,155,119,0.07); border: 1px solid rgba(0,155,119,0.20);
+            border-radius: 10px; padding: 16px 20px; text-decoration: none;
+            margin-bottom: 24px; transition: background 0.25s, border-color 0.25s;
+        }
+        .phone-link-big:hover { background: rgba(0,155,119,0.12); border-color: var(--primary); }
+        .phone-link-big i { color: var(--primary); font-size: 1.4rem; }
+        .phone-link-big span { font-size: 1.25rem; font-weight: 700; color: var(--primary); }
+
+        .divider-or {
+            display: flex; align-items: center; gap: 12px;
+            margin-bottom: 24px; color: #a0aec0; font-size: 0.88rem; font-weight: 600;
+        }
+        .divider-or::before, .divider-or::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+        @media (max-width: 480px) { .form-card-meet, .form-card-call { padding: 32px 24px; } }
+
+        /* PROBLEMS SECTION */
+        .problems-section { padding: 100px 0; background: #ffffff; }
+        .section-label { font-size: 0.82rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; display: block; }
+        .section-title { font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 700; color: #1a202c; line-height: 1.25; margin-bottom: 14px; }
+        .section-sub { font-size: 1.05rem; color: #556068; max-width: 620px; margin: 0 auto 48px; }
+
+        .problems-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+        .problem-card {
+            background: #ffffff; border-radius: 14px; padding: 32px 28px;
+            border-left: 4px solid #ef4444;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .problem-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,0.10); }
+        .problem-icon {
+            width: 52px; height: 52px; background: rgba(239,68,68,0.10);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; color: #ef4444; margin-bottom: 18px;
+        }
+        .problem-card h3 { font-size: 1.1rem; font-weight: 700; color: #1a202c; margin-bottom: 10px; }
+        .problem-card p { font-size: 0.95rem; color: #556068; line-height: 1.65; }
+
+        @media (max-width: 768px) { .problems-grid { grid-template-columns: 1fr; } }
+
+        /* FEATURES SECTION */
+        .features-section { padding: 100px 0; background: var(--light-bg); }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+        .feature-card {
+            background: #ffffff; border-radius: 14px; padding: 36px 28px;
+            border-top: 4px solid var(--primary);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,0.10); }
+        .feature-icon {
+            width: 52px; height: 52px; background: rgba(0,155,119,0.10);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.4rem; color: var(--primary); margin-bottom: 18px;
+        }
+        .feature-card h3 { font-size: 1.1rem; font-weight: 700; color: #1a202c; margin-bottom: 10px; }
+        .feature-card p { font-size: 0.95rem; color: #556068; line-height: 1.65; }
+        .feature-spec { margin-top: 14px; font-size: 0.82rem; font-weight: 700; color: var(--primary); background: rgba(0,155,119,0.08); border-radius: 6px; padding: 6px 12px; display: inline-block; }
+
+        @media (max-width: 768px) { .features-grid { grid-template-columns: 1fr; } }
+
+        /* DID YOU KNOW */
+        .dyk-wrapper { padding: 80px 0; background: #ffffff; }
+        .dyk-section {
+            background: var(--forest); border-radius: 16px;
+            padding: 56px 48px; margin: 0 40px;
+            position: relative; overflow: hidden;
+            text-align: center;
+        }
+        .dyk-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 80% 50%, rgba(0,155,119,0.2) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .dyk-header { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 28px; }
+        .dyk-header i { font-size: 1.6rem; color: var(--mint); }
+        .dyk-header h2 { font-size: 1.5rem; font-weight: 700; color: #ffffff; }
+        .dyk-body { font-size: 1.05rem; color: rgba(255,255,255,0.85); line-height: 1.7; margin-bottom: 28px; max-width: 820px; text-align: center; margin-left: auto; margin-right: auto; }
+        .dyk-pills { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+        .dyk-pill { border: 1px solid rgba(82,255,211,0.4); border-radius: 50px; padding: 8px 20px; font-size: 0.88rem; font-weight: 600; color: var(--mint); }
+        @media (max-width: 768px) { .dyk-section { margin: 0 12px; padding: 36px 20px; } }
+
+        /* ROI STATS */
+        .roi-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0d3d30 0%, #0b3129 100%);
+            position: relative; overflow: hidden;
+        }
+        .roi-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(0,155,119,0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .roi-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px; align-items: center; }
+        .roi-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+        .roi-stat {
+            text-align: center; padding: 24px 20px;
+            background: rgba(255,255,255,0.05); border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .roi-number { font-size: 2.2rem; font-weight: 700; color: var(--mint); margin-bottom: 8px; }
+        .roi-label { font-size: 0.9rem; color: rgba(255,255,255,0.7); }
+        .roi-content h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; color: #ffffff; margin-bottom: 16px; }
+        .roi-content p { font-size: 1.05rem; color: rgba(255,255,255,0.75); line-height: 1.7; margin-bottom: 24px; }
+        .roi-note { font-size: 0.82rem; color: rgba(255,255,255,0.5); font-style: italic; margin-top: 16px; }
+
+        @media (max-width: 768px) { 
+            .roi-grid { grid-template-columns: 1fr; }
+            .roi-stats { grid-template-columns: 1fr; }
+        }
+
+        /* TECHNICAL SPECS */
+        .specs-section { padding: 80px 0; background: var(--light-bg); }
+        .specs-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .spec-table {
+            background: #ffffff; border-radius: 12px; overflow: hidden;
+            box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+        }
+        .spec-table h3 {
+            background: var(--primary); color: #ffffff; padding: 20px 24px;
+            font-size: 1.1rem; font-weight: 700; margin: 0;
+        }
+        .spec-row {
+            display: grid; grid-template-columns: 1.2fr 1fr;
+            border-bottom: 1px solid var(--border);
+        }
+        .spec-row:last-child { border-bottom: none; }
+        .spec-key { padding: 16px 24px; font-weight: 600; color: var(--body-text); background: #fafafa; }
+        .spec-value { padding: 16px 24px; color: #666; }
+
+        @media (max-width: 1024px) { .specs-grid { grid-template-columns: 1fr; } }
+
+        /* APPLICATIONS */
+        .applications-section { padding: 80px 0; background: #ffffff; }
+        .app-chips { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 36px; }
+        .app-chip {
+            display: flex; align-items: center; gap: 10px;
+            background: #ffffff; border: 1px solid var(--border); border-radius: 50px;
+            padding: 10px 22px; font-size: 0.92rem; font-weight: 600; color: var(--body-text);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .app-chip i { color: var(--primary); font-size: 1rem; }
+
+        /* FOOTER */
+        footer { background: var(--forest); color: #ffffff; padding: 70px 0 40px; font-size: 0.95rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.2fr 1.5fr 1.3fr; gap: 40px; margin-bottom: 60px; }
+        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 40px; } }
+        .footer-logo { height: 45px; width: auto; margin-bottom: 12px; margin-left: 0; display: block; fill: #ffffff; transition: transform 0.3s, opacity 0.3s; }
+        .footer-logo:hover { transform: scale(1.05); opacity: 0.9; }
+        .footer-col h4 { font-size: 1.05rem; font-weight: 600; margin-bottom: 15px; color: #ffffff; }
+        .footer-col p { color: #cfe6de; margin-bottom: 8px; font-weight: 300; }
+        .footer-label { color: var(--muted-teal); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .footer-col a { color: var(--mint); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+        .footer-col a:hover { color: #ffffff; }
+        .contact-block { margin-bottom: 22px; }
+        .social-links { display: flex; gap: 10px; margin-top: 22px; }
+        .social-icon { width: 30px; height: 30px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--forest) !important; font-size: 0.9rem; text-decoration: none; transition: background 0.25s, color 0.25s, transform 0.25s; }
+        .social-icon:hover { background: var(--primary); color: #ffffff !important; transform: translateY(-2px); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 28px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .footer-bottom a { color: #ffffff; text-decoration: none; font-size: 0.92rem; transition: color 0.2s; }
+        .footer-bottom a:hover { color: var(--mint); text-decoration: underline; }
+
+        /* FLOATING SCHEDULER */
+        .sidebar-widget-container { position: fixed; right: 20px; bottom: 28px; z-index: 999; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+        .scheduler-flyout { display: none; background: #ffffff; border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,0.18); padding: 28px 24px; width: 280px; border-top: 4px solid var(--primary); position: relative; }
+        .scheduler-flyout h3 { font-size: 1.05rem; font-weight: 700; color: #1a202c; margin-bottom: 8px; }
+        .scheduler-flyout p { font-size: 0.88rem; color: #556068; margin-bottom: 18px; }
+        .close-btn { position: absolute; top: 10px; right: 14px; background: none; border: none; font-size: 1.3rem; color: #a0aec0; cursor: pointer; line-height: 1; }
+        .book-now-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px 20px; background: var(--primary); color: #ffffff; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.92rem; transition: background 0.2s; }
+        .book-now-btn:hover { background: var(--primary-dark); }
+        .scheduler-trigger { width: 56px; height: 56px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,155,119,0.4); cursor: pointer; border: none; transition: background 0.2s, transform 0.2s; }
+        .scheduler-trigger:hover { background: var(--primary-dark); transform: scale(1.07); }
+        .scheduler-trigger i { color: #ffffff; font-size: 1.3rem; }
+        @media (max-width: 768px) { .sidebar-widget-container { right: 12px; } }
+    </style>
+</head>
+<body>
+
+    <!-- ==== INLINE SVG LOGO SYMBOL ==== -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="cs-logo" viewBox="0 0 180 52"><path d="M.557 25.798c0 13.94 11.332 25.317 25.317 25.317v-8.274c-9.399 0-17.043-7.645-17.043-17.043S16.475 8.755 25.874 8.755V.525C11.934.526.557 11.859.557 25.799Zm28.6-1.799-.585 1.889c-1.35 4.317-3.193 4.317-3.957 4.317-2.159 0-3.643-1.574-3.643-3.777h-8.274c0 6.745 5.216 12.051 11.917 12.051 3.237 0 9.083-1.304 11.826-10.073l.585-1.889c.99-3.147 2.518-4.721 4.497-4.721 2.203 0 3.642 1.799 3.642 4.632h8.274c0-7.375-5.126-12.906-11.916-12.906-5.756-.045-10.253 3.777-12.367 10.477ZM67.2 37.04c0 .63-1.17 1.709-3.013 1.709h-.585c-2.068 0-3.372-1.304-3.372-3.193v-6.25c0-1.89 1.304-3.193 3.372-3.193h.585c1.798 0 3.013 1.034 3.013 1.709 0 .045-.045.134-.135.134l-.81.405h-.09c-.045 0-.09 0-.135-.09-.584-.584-.989-1.079-1.843-1.079h-.585c-1.17 0-2.068.9-2.068 2.069v6.25c0 1.17.899 2.069 2.068 2.069h.585c.45 0 .944-.18 1.259-.495.45-.405.584-.72.72-.72h.09l.809.405c.135.135.135.18.135.27Zm2.968-7.78c0 .855.584 1.53 1.843 2.114.99.45 1.844.854 2.563 1.35.9.719 1.35 1.663 1.35 2.877 0 1.889-1.305 3.193-3.418 3.193h-.855c-1.843 0-3.012-1.08-3.012-1.709 0-.09.044-.135.135-.135l.809-.45h.09c.09 0 .09.045.135.09.54.585.944 1.08 1.843 1.08h.855c1.169 0 2.113-.9 2.113-2.069 0-1.304-.989-1.799-2.653-2.608-2.023-.99-3.148-1.664-3.148-3.643 0-1.888 1.305-3.192 3.373-3.192h.315c1.844 0 3.013 1.079 3.013 1.709 0 .044-.045.09-.135.134l-.81.405h-.09c-.044 0-.09 0-.134-.09-.54-.584-.945-1.079-1.844-1.079h-.315c-1.124 0-2.023.854-2.023 2.024Zm14.3 9.309h-.9c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.9c.134 0 .18.046.18.18v11.827c0 .135-.046.225-.18.225Zm10.207 0h-.854l-.18-.09-5.216-9.578h-.045l.09 9.488c0 .135-.045.18-.18.18h-.9c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.855l.18.09 5.216 9.624h.045l-.135-9.534c0-.134.045-.18.18-.18h.944c.135 0 .18.046.18.18v11.827c.045.135-.045.225-.18.225Zm3.598-9.308c0 .854.584 1.529 1.843 2.113.99.45 1.844.854 2.564 1.35.899.719 1.349 1.663 1.349 2.877 0 1.889-1.304 3.193-3.418 3.193h-.854c-1.844 0-3.013-1.08-3.013-1.709 0-.09.045-.135.135-.135l.81-.45h.089c.09 0 .09.045.135.09.54.585.944 1.08 1.844 1.08h.854c1.169 0 2.114-.9 2.114-2.069 0-1.304-.99-1.799-2.654-2.608-2.023-.99-3.147-1.664-3.147-3.643 0-1.888 1.304-3.192 3.372-3.192h.315c1.844 0 3.013 1.079 3.013 1.709 0 .044-.045.09-.135.134l-.809.405h-.09c-.045 0-.09 0-.135-.09-.54-.584-.945-1.079-1.844-1.079h-.315a2.015 2.015 0 0 0-2.023 2.024Zm13.22-1.844h-2.338c-.135 0-.18.045-.18.18v10.747c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V27.642c0-.135-.045-.18-.18-.18h-2.338c-.135 0-.18-.045-.18-.18v-.72c0-.134.045-.18.18-.18h6.295c.135 0 .18.046.18.18v.675c0 .135-.045.18-.18.18Zm8.185 4.677c.764-.675 1.169-1.484 1.169-2.159v-.225c0-2.068-1.349-3.372-3.418-3.372h-3.777c-.135 0-.18.045-.18.18v11.781c0 .135.045.18.18.18h.899c.135 0 .18-.045.18-.18v-5.261c0-.135.045-.18.18-.18h2.428c.09.045.135.09.135.135l1.844 5.396a.62.62 0 0 0 .18.135h1.034c.09 0 .18-.045.18-.135 0-.045 0-.045.09-.045l-1.934-5.62v-.046c0-.18.36-.225.81-.584Zm-2.384-.36h-2.473c-.135 0-.18-.045-.18-.18v-3.957c0-.135.045-.18.18-.18h2.473c1.169 0 2.114.9 2.114 2.068v.135c0 1.214-.945 2.114-2.114 2.114Zm9.309 7.015h-.585c-2.068 0-3.373-1.304-3.373-3.193v-9.038c0-.135.045-.18.18-.18h.945c.135 0 .18.045.18.18v9.038c0 1.17.899 2.069 2.068 2.069h.585a2.092 2.092 0 0 0 2.068-2.069v-9.038c0-.135.045-.18.18-.18h.944c.135 0 .18.045.18.18v9.038c.045 1.889-1.304 3.193-3.372 3.193Zm11.332-2.159c0 .045-.09.09-.18.135h-.315c-.09 0-.135-.045-.18-.135l-3.238-7.69.135 9.444c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.899c.09 0 .135.09.18.136l3.463 8.184h.045l3.462-8.184c0-.045.09-.09.18-.135h.9c.135 0 .18.045.18.18v11.826c0 .135-.045.18-.18.18h-.9c-.135 0-.18-.045-.18-.18l.135-9.488-3.327 7.734ZM152.1 38.57h-6.386c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h6.386c.135 0 .18.046.18.18v.72c0 .135-.045.18-.18.18h-5.082c-.135 0-.18.045-.18.18v3.957c0 .135.045.18.18.18h4.182c.135 0 .18.045.18.18v.72c0 .134-.045.18-.18.18h-4.182c-.135 0-.18.044-.18.179v4.182c0 .135.045.18.18.18h5.082c.135 0 .18.09.18.18v.72c0 .224-.045.314-.18.314Zm10.252 0h-.854l-.18-.09-5.216-9.578h-.045l.09 9.488c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.854l.18.09 5.216 9.624h.045l-.135-9.534c0-.134.045-.18.18-.18h.944c.135 0 .18.046.18.18v11.827c0 .135-.045.225-.18.225Zm8.769-11.152h-2.338c-.135 0-.18.045-.18.18v10.747c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V27.642c0-.135-.045-.18-.18-.18h-2.338c-.135 0-.18-.045-.18-.18v-.72c0-.134.045-.18.18-.18h6.385c.135 0 .18.046.18.18v.675c-.045.135-.135.18-.27.18Zm2.833 1.844c0 .854.585 1.529 1.844 2.113.989.45 1.844.854 2.563 1.35.899.719 1.349 1.663 1.349 2.877 0 1.889-1.304 3.193-3.417 3.193h-.855c-1.844 0-3.013-1.08-3.013-1.709 0-.09.045-.135.135-.135l.81-.45h.09c.09 0 .09.045.134.09.54.585.945 1.08 1.844 1.08h.855c1.169 0 2.113-.9 2.113-2.069 0-1.304-.989-1.799-2.653-2.608-2.024-.99-3.148-1.664-3.148-3.643 0-1.888 1.304-3.192 3.373-3.192h.315c1.843 0 3.012 1.079 3.012 1.709 0 .044-.045.09-.134.134l-.81.405h-.09c-.045 0-.09 0-.135-.09-.539-.584-.944-1.079-1.843-1.079h-.315a2.015 2.015 0 0 0-2.024 2.024Z"/></symbol>
+    </svg>
+
+    <!-- ==== HEADER ==== -->
+    <header id="site-header" role="banner">
+        <div class="container">
+            <div class="header-row">
+                <div class="logo-wrap">
+                    <a href="https://www.cs-instruments.com/us" target="_blank" rel="noopener" class="logo-link" aria-label="CS INSTRUMENTS Homepage">
+                    <svg class="logo" role="img" aria-label="CS INSTRUMENTS Logo"><use href="#cs-logo" xlink:href="#cs-logo"></use></svg>
+                    </a>
+                </div>
+                <div class="header-cta-wrap">
+                    <a href="#form-section" class="btn header-call-btn" aria-label="Jump to contact form" onclick="document.getElementById('form-section').scrollIntoView({behavior:'smooth'}); return false;">
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i> Request Expert Callback
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==== HERO ==== -->
+    <section class="hero-section" aria-label="CS INSTRUMENTS Dew Point Measurement Hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                        Precision Moisture Measurement
+                    </div>
+                    <h1>Professional Dew Point<br><span>Measurement Solutions</span></h1>
+                    <p class="hero-sub">
+                        Ensure optimal compressed air quality with CS INSTRUMENTS' precision dew point sensors and mobile meters. From refrigeration dryers to adsorption systems, get accurate moisture measurement down to -112°F with long-term stability and quick response times.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#form-section" class="btn" aria-label="Calculate your potential savings" onclick="document.getElementById('form-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <i class="fa-solid fa-calculator" style="margin-right:10px;"></i> Calculate Potential Savings
+                        </a>
+                        <a href="#form-section" class="btn btn-outline" aria-label="Jump to contact form" onclick="document.getElementById('form-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            <i class="fa-solid fa-phone" style="margin-right:10px;"></i> Request Expert Callback
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="hero-image-card">
+                        <img src="https://www.cs-instruments.com/cs-data/Produktbilder/PNG/Taupunkt/333/image-thumb__333__product/DP_500.06f6ec2b.png" 
+                             alt="CS INSTRUMENTS DP 500 mobile dew point meter" 
+                             class="product-image">
+                        <p style="color:rgba(82,255,211,0.8); font-weight:600; font-size:1rem; margin-bottom:6px;">DP 500 Mobile Dew Point Meter</p>
+                        <p style="color:rgba(255,255,255,0.65); font-size:0.85rem; text-align:center;">3.5" touchscreen with data logging capability</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== FORM SECTION ==== -->
+    <section class="form-section" id="form-section" aria-label="Contact CS INSTRUMENTS">
+        <div class="container">
+            <div class="form-section-header">
+                <h2>Ready to Optimize Your Compressed Air Quality?</h2>
+                <p>Talk to a CS INSTRUMENTS application engineer. Get expert advice on the right dew point solution for your specific needs.</p>
+            </div>
+            <div class="form-grid">
+
+                <!-- CALCULATOR CARD -->
+                <div class="form-card-meet reveal delay-1">
+                    <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-calculator"></i></div>
+                    <h3>Calculate Your Potential Savings</h3>
+                    <p>Estimate the cost of moisture-related issues in your compressed air system and discover potential savings.</p>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px;">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                            <div>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--body-text); margin-bottom: 4px;">Compressor Power (kW)</label>
+                                <input type="number" id="compressorPower" placeholder="150" style="padding: 10px 12px; border: 1px solid var(--border); border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.9rem; width: 100%;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--body-text); margin-bottom: 4px;">Operating Hours/Year</label>
+                                <input type="number" id="operatingHours" placeholder="6000" style="padding: 10px 12px; border: 1px solid var(--border); border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.9rem; width: 100%;">
+                            </div>
+                        </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+                            <div>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--body-text); margin-bottom: 4px;">Energy Cost ($/kWh)</label>
+                                <input type="number" id="energyCost" placeholder="0.08" step="0.01" style="padding: 10px 12px; border: 1px solid var(--border); border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.9rem; width: 100%;">
+                            </div>
+                            <div>
+                                <label style="display: block; font-size: 0.85rem; font-weight: 600; color: var(--body-text); margin-bottom: 4px;">Estimated Leakage %</label>
+                                <select id="leakagePercent" style="padding: 10px 12px; border: 1px solid var(--border); border-radius: 6px; font-family: 'Inter', sans-serif; font-size: 0.9rem; width: 100%;">
+                                    <option value="15">15% - Good System</option>
+                                    <option value="25" selected>25% - Average System</option>
+                                    <option value="35">35% - Poor System</option>
+                                    <option value="45">45% - Very Poor System</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="calculateSavings()" class="btn" style="width: 100%; margin-bottom: 16px;">
+                        <i class="fa-solid fa-calculator" style="margin-right: 8px;"></i> Calculate Savings
+                    </button>
+
+                    <div id="savingsResult" style="display: none; background: rgba(0,155,119,0.08); border: 1px solid rgba(0,155,119,0.2); border-radius: 8px; padding: 16px;">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <span style="font-weight: 600; color: var(--body-text);">Annual Energy Cost:</span>
+                            <span id="totalCost" style="font-weight: 700; color: var(--primary); font-size: 1.1rem;"></span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <span style="font-weight: 600; color: var(--body-text);">Potential Waste:</span>
+                            <span id="wasteCost" style="font-weight: 700; color: #ef4444; font-size: 1.1rem;"></span>
+                        </div>
+                        <div style="font-size: 0.85rem; color: #556068; font-style: italic;">
+                            * Based on typical compressed air system inefficiencies
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CONTACT FORM CARD -->
+                <div class="form-card-call reveal delay-2">
+                    <div class="card-icon" aria-hidden="true"><i class="fa-solid fa-paper-plane"></i></div>
+                    <h3>Get Expert Dew Point Guidance</h3>
+                    <p class="card-sub">Connect with our dew point measurement specialists. Get personalized recommendations for your application.</p>
+
+                    <!-- HubSpot Form Embed (PRESERVED EXACTLY) -->
+                    <script src="https://js.hsforms.net/forms/embed/43972642.js" defer></script>
+                    <div class="hs-form-frame" data-region="na1" data-form-id="c78e694f-44f3-47b6-9a8d-458430b023e9" data-portal-id="43972642"></div>
+                    <!-- End HubSpot Form Embed -->
+
+                    <div style="margin-top: 20px; padding: 16px; background: rgba(0,155,119,0.05); border-radius: 8px; border: 1px solid rgba(0,155,119,0.1);">
+                        <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                            <i class="fa-solid fa-clock" style="color: var(--primary); font-size: 0.9rem;"></i>
+                            <span style="font-size: 0.9rem; font-weight: 600; color: var(--body-text);">We typically respond within 1 business day</span>
+                        </div>
+                        <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 0.85rem; color: #556068;">
+                            <li style="display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-check" style="color: var(--primary); font-size: 0.75rem;"></i> Personalized product recommendations</li>
+                            <li style="display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-check" style="color: var(--primary); font-size: 0.75rem;"></i> Technical application support</li>
+                            <li style="display: flex; align-items: center; gap: 6px;"><i class="fa-solid fa-check" style="color: var(--primary); font-size: 0.75rem;"></i> Free system assessment</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== PROBLEMS SECTION ==== -->
+    <section class="problems-section" aria-label="Compressed Air Moisture Problems">
+        <div class="container" style="text-align:center;">
+            <span class="section-label reveal">Common Problems</span>
+            <h2 class="section-title reveal">Moisture Damages Your Compressed Air System</h2>
+            <p class="section-sub reveal delay-1">High moisture content leads to corrosion, equipment failures, and production quality issues. Here's what happens when dew point isn't properly monitored.</p>
+            <div class="problems-grid">
+                
+                <div class="problem-card reveal delay-1">
+                    <div class="problem-icon" aria-hidden="true"><i class="fa-solid fa-exclamation-triangle"></i></div>
+                    <h3>Corrosion & Rust Formation</h3>
+                    <p>Steel compressed air lines corrode rapidly above 50% relative humidity. Rust particles break off, travel through the system, and block nozzles and control elements, causing expensive repairs and downtime.</p>
+                </div>
+
+                <div class="problem-card reveal delay-2">
+                    <div class="problem-icon" aria-hidden="true"><i class="fa-solid fa-tools"></i></div>
+                    <h3>Equipment Damage</h3>
+                    <p>Moisture causes pneumatic tools and machinery to malfunction. Water droplets contaminate lubricants, damage seals, and lead to premature component failure and costly maintenance.</p>
+                </div>
+
+                <div class="problem-card reveal delay-3">
+                    <div class="problem-icon" aria-hidden="true"><i class="fa-solid fa-industry"></i></div>
+                    <h3>Production Quality Issues</h3>
+                    <p>In painting and coating applications, moisture creates bubbles and surface defects. Hygroscopic products like spices and sugar clump together during pneumatic transport, affecting product quality.</p>
+                </div>
+
+                <div class="problem-card reveal delay-4">
+                    <div class="problem-icon" aria-hidden="true"><i class="fa-solid fa-dollar-sign"></i></div>
+                    <h3>Energy Waste</h3>
+                    <p>A 30 kW compressor can release 0.7 CF of water into the compressed air line in just 8 hours at 60% humidity and 68°F. This represents significant energy waste and system inefficiency.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== FEATURES SECTION ==== -->
+    <section class="features-section" aria-label="CS INSTRUMENTS Dew Point Features">
+        <div class="container" style="text-align:center;">
+            <span class="section-label reveal">Key Features</span>
+            <h2 class="section-title reveal">Precision Measurement You Can Trust</h2>
+            <p class="section-sub reveal delay-1">CS INSTRUMENTS dew point solutions deliver accurate, reliable moisture measurement with industry-leading features and proven sensor technology.</p>
+            <div class="features-grid">
+
+                <div class="feature-card reveal delay-1">
+                    <div class="feature-icon" aria-hidden="true"><i class="fa-solid fa-crosshairs"></i></div>
+                    <h3>Exceptional Accuracy</h3>
+                    <p>Achieve ±0.5°F accuracy in the critical range from 14°F to 122°F, with ±2°F typical accuracy in extended ranges. Industry-leading precision for reliable compressed air quality monitoring.</p>
+                    <span class="feature-spec">Range: -112°F to +122°F</span>
+                </div>
+
+                <div class="feature-card reveal delay-2">
+                    <div class="feature-icon" aria-hidden="true"><i class="fa-solid fa-clock"></i></div>
+                    <h3>Quick Response Time</h3>
+                    <p>Fast sensor adaptation ensures rapid detection of moisture changes. Critical for monitoring dryer performance and detecting system issues before they cause damage.</p>
+                    <span class="feature-spec">Condensation-Resistant Sensor</span>
+                </div>
+
+                <div class="feature-card reveal delay-3">
+                    <div class="feature-icon" aria-hidden="true"><i class="fa-solid fa-database"></i></div>
+                    <h3>Advanced Data Logging</h3>
+                    <p>Store up to 100 million measured values with integrated 16GB SD memory. USB and Ethernet interfaces for easy data transfer and analysis with CS Soft Basic software.</p>
+                    <span class="feature-spec">16GB SD Memory Card</span>
+                </div>
+
+                <div class="feature-card reveal delay-4">
+                    <div class="feature-icon" aria-hidden="true"><i class="fa-solid fa-mobile-alt"></i></div>
+                    <h3>Mobile & Fixed Options</h3>
+                    <p>Choose from portable meters like the DP 500/510 for service work, or permanent sensors like the FA series for continuous monitoring. All with proven humidity sensor technology.</p>
+                    <span class="feature-spec">Mobile & Stationary Solutions</span>
+                </div>
+
+                <div class="feature-card reveal delay-1">
+                    <div class="feature-icon" aria-hidden="true"><i class="fa-solid fa-gauge-high"></i></div>
+                    <h3>High Pressure Capability</h3>
+                    <p>Handle pressures up to 7,251 psi with special versions. Standard models work up to 725 psi, perfect for most compressed air applications and technical gas systems.</p>
+                    <span class="feature-spec">Up to 7,251 psi</span>
+                </div>
+
+                <div class="feature-card reveal delay-2">
+                    <div class="feature-icon" aria-hidden="true"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3>Multiple Interfaces</h3>
+                    <p>Connect via Modbus-RTU, 4-20mA, IO-Link, or Ethernet. Seamless integration with existing control systems and SCADA platforms for complete system monitoring.</p>
+                    <span class="feature-spec">Modbus, IO-Link, Ethernet</span>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== DID YOU KNOW BANNER ==== -->
+    <div class="dyk-wrapper" aria-label="CS INSTRUMENTS Dew Point Specifications">
+        <div class="dyk-section reveal">
+            <div class="dyk-header">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                <h2>Did You Know?</h2>
+            </div>
+            <p class="dyk-body">
+                CS INSTRUMENTS dew point sensors use proven humidity sensor technology with worldwide acceptance. The sensors feature condensation-resistant design and extremely stable long-term performance. All measurements are continuously flowing through the sensor via controlled capillary flow to ensure accurate, real-time readings.
+            </p>
+            <div class="dyk-pills">
+                <span class="dyk-pill">±0.5°F Accuracy</span>
+                <span class="dyk-pill">-112°F to +122°F Range</span>
+                <span class="dyk-pill">Condensation Resistant</span>
+                <span class="dyk-pill">Long-term Stable</span>
+                <span class="dyk-pill">Quick Response</span>
+                <span class="dyk-pill">Up to 7,251 psi</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==== ROI STATS SECTION ==== -->
+    <section class="roi-section" aria-label="Dew Point Monitoring ROI">
+        <div class="container">
+            <div class="roi-grid">
+                <div class="roi-content">
+                    <h2>The Cost of Poor Moisture Control</h2>
+                    <p>Proper dew point monitoring prevents expensive equipment damage, reduces maintenance costs, and ensures product quality. A single production shutdown can cost thousands in lost time and damaged goods.</p>
+                    <div class="reveal delay-1">
+                        <a href="#form-section" class="btn" onclick="document.getElementById('form-section').scrollIntoView({behavior:'smooth'}); return false;">
+                            Calculate Your Savings
+                        </a>
+                    </div>
+                    <p class="roi-note">* Sample calculation: 150 kW compressor x 6,000 op. hrs/year x $0.08/kWh = $72,000/year. 25% leakage = $18,000/year lost.</p>
+                </div>
+                <div class="roi-stats">
+                    <div class="roi-stat reveal delay-1">
+                        <div class="roi-number">25%</div>
+                        <div class="roi-label">Typical energy loss from moisture issues*</div>
+                    </div>
+                    <div class="roi-stat reveal delay-2">
+                        <div class="roi-number">50%</div>
+                        <div class="roi-label">RH threshold for rapid corrosion</div>
+                    </div>
+                    <div class="roi-stat reveal delay-3">
+                        <div class="roi-number">0.7 CF</div>
+                        <div class="roi-label">Water from 30kW compressor in 8hrs*</div>
+                    </div>
+                    <div class="roi-stat reveal delay-4">
+                        <div class="roi-number">100M</div>
+                        <div class="roi-label">Data points stored in logger</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== TECHNICAL SPECS ==== -->
+    <section class="specs-section" aria-label="Technical Specifications">
+        <div class="container" style="text-align:center;">
+            <span class="section-label reveal">Technical Data</span>
+            <h2 class="section-title reveal">Detailed Specifications</h2>
+            <div class="specs-grid">
+                
+                <!-- DP 500 SPECS -->
+                <div class="spec-table reveal delay-1">
+                    <h3>DP 500 Mobile Meter</h3>
+                    <div class="spec-row">
+                        <div class="spec-key">Display</div>
+                        <div class="spec-value">3.5" touch screen</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">Measuring Range</div>
+                        <div class="spec-value">-112 to 122°F</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">Accuracy</div>
+                        <div class="spec-value">±0.5°F at 14 to 122°F</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">Pressure Range</div>
+                        <div class="spec-value">-1 to 725 psi</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">Data Logger</div>
+                        <div class="spec-value">16GB SD (100M values)</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">Battery Life</div>
+                        <div class="spec-value">12h continuous</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">Interface</div>
+                        <div class="spec-value">USB</div>
+                    </div>
+                </div>
+
+                <!-- FA 500 SPECS -->
+                <div class="spec-table reveal delay-2">
+                    <h3>FA 500 Display Sensor</h3>
+                    <div class="spec-row">
+                        <div class="spec-key">Display</div>
+                        <div class="spec-value">Integrated LCD</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">Measuring Range</div>
+                        <div class="spec-value">-112 to 68°F</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">Accuracy</div>
+                        <div class="spec-value">±1.8°F at 122 to -4°F</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">Pressure Range</div>
+                        <div class="spec-value">-1 to 50 bar (725 psi)</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">Power Supply</div>
+                        <div class="spec-value">24 VDC (10-36 VDC)</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">Protection</div>
+                        <div class="spec-value">IP 65</div>
+                    </div>
+                </div>
+
+                <!-- FA 510 SPECS -->
+                <div class="spec-table reveal delay-3">
+                    <h3>FA 510 Process Sensor</h3>
+                    <div class="spec-row">
+                        <div class="spec-key">Design</div>
+                        <div class="spec-value">Compact OEM</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">Measuring Range</div>
+                        <div class="spec-value">-112 to 68°F</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">Accuracy</div>
+                        <div class="spec-value">±1.8°F at 122 to -4°F</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">Pressure Range</div>
+                        <div class="spec-value">-1 to 50 bar (725 psi)</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">Output Signals</div>
+                        <div class="spec-value">4-20mA, Modbus-RTU</div>
+                    </div>
+                    <div class="spec-row">
+                        <div class="spec-key">IO-Link</div>
+                        <div class="spec-value">Compatible</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== FOOTER ==== -->
+    <footer role="contentinfo" aria-label="CS INSTRUMENTS USA Contact Information">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- USA Address -->
+                <div class="footer-col">
+                    <h4>CS INSTRUMENTS USA INC.</h4>
+                    <p>8237 Pinellas Drive</p>
+                    <p>Bluffton, South Carolina 29909, USA</p>
+                    <div class="contact-block">
+                        <div class="footer-label">Phone</div>
+                        <a href="tel:+18435996700" class="footer-col-link">+1 (843) 599 6700</a>
+                    </div>
+                </div>
+
+                <!-- Contacts -->
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="contact-block">
+                        <div class="footer-label">RFQs / Billing / General</div>
+                        <a href="mailto:info-us@cs-instruments.com">info-us@cs-instruments.com</a>
+                    </div>
+                    <div class="contact-block">
+                        <div class="footer-label">Technical Support / Calibration</div>
+                        <a href="mailto:support-us@cs-instruments.com">support-us@cs-instruments.com</a>
+                    </div>
+                </div>
+
+                <!-- Headquarter -->
+                <div class="footer-col">
+                    <h4>Headquarter</h4>
+                    <p>Zindelsteiner Straße 15</p>
+                    <p>D-78052 VS-Tannheim, Germany</p>
+                    <div class="contact-block">
+                        <div class="footer-label">Phone</div>
+                        <a href="tel:+497705978990">+49 7705 978 99 0</a>
+                    </div>
+                    <div class="contact-block">
+                        <a href="mailto:info@cs-instruments.com">info@cs-instruments.com</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Social & Legal -->
+            <div class="footer-bottom">
+                <div style="display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/cs_instruments_usa/" target="_blank" rel="noopener" class="social-icon" aria-label="CS INSTRUMENTS USA Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/cs-instruments-usa/" target="_blank" rel="noopener" class="social-icon" aria-label="CS INSTRUMENTS USA LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCXd2PHrMidAJj3xIuSd0NKQ" target="_blank" rel="noopener" class="social-icon" aria-label="CS INSTRUMENTS YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <div style="display: flex; gap: 28px; flex-wrap: wrap;">
+                        <a href="https://www.cs-instruments.com/us/legal/imprint" target="_blank" rel="noopener">Imprint</a>
+                        <a href="https://www.cs-instruments.com/us/legal/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==== SCROLL ANIMATIONS ==== -->
+    <script>
+        // Reveal animation on scroll
+        const revealElements = document.querySelectorAll('.reveal');
+        
+        function revealOnScroll() {
+            revealElements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('is-visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll();
+
+        // Header scroll effect
+        const header = document.getElementById('site-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Savings calculator
+        function calculateSavings() {
+            const power = parseFloat(document.getElementById('compressorPower').value);
+            const hours = parseFloat(document.getElementById('operatingHours').value);
+            const cost = parseFloat(document.getElementById('energyCost').value);
+            const leakage = parseFloat(document.getElementById('leakagePercent').value);
+
+            if (!power || !hours || !cost || !leakage) {
+                alert('Please fill in all fields');
+                return;
+            }
+
+            const totalCost = power * hours * cost;
+            const wasteCost = (totalCost * leakage) / 100;
+
+            document.getElementById('totalCost').textContent = '$' + totalCost.toLocaleString('en-US', { maximumFractionDigits: 0 });
+            document.getElementById('wasteCost').textContent = '$' + wasteCost.toLocaleString('en-US', { maximumFractionDigits: 0 });
+            document.getElementById('savingsResult').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
