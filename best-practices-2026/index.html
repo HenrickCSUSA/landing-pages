@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet CS INSTRUMENTS at Best Practices EXPO 2026 | Booth #232 Indianapolis</title>
+    <meta name="description" content="Join CS INSTRUMENTS at Best Practices EXPO 2026, October 13-14 in Indianapolis. See our latest compressed-air measurement technology live at Booth #232. Request a meeting with our specialists.">
+    <link rel="canonical" href="https://www.cs-instruments.com/us/events/best-practices-expo-2026">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #009b77;
+            --primary-dark: #007f61;
+            --dark-bg: #1a1a1a;
+            --footer-bg: #0b3129;
+            --light-bg: #f4f7f6;
+            --text-dark: #2d3748;
+            --text-light: #ffffff;
+            --border-color: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: opacity, transform;
+        }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .reveal.delay-1 { transition-delay: 0.1s; }
+        .reveal.delay-2 { transition-delay: 0.2s; }
+        .reveal.delay-3 { transition-delay: 0.3s; }
+        .reveal.delay-4 { transition-delay: 0.4s; }
+
+        header {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: saturate(180%) blur(10px);
+            -webkit-backdrop-filter: saturate(180%) blur(10px);
+            padding: 15px 0 25px 0;
+            border-bottom: 4px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: box-shadow 0.3s ease, padding 0.3s ease;
+        }
+        header.scrolled { box-shadow: 0 6px 24px rgba(0,0,0,0.07); padding: 10px 0 18px 0; }
+        .header-row { display: flex; justify-content: space-between; align-items: flex-start; }
+        .logo-wrap { margin-top: 10px; }
+        .logo-link { display: inline-block; text-decoration: none; }
+        .logo { height: 48px; width: auto; display: block; border: none; background: transparent; fill: #009b77; transition: transform 0.3s ease, opacity 0.3s ease; }
+        .logo-link:hover .logo { transform: scale(1.04); opacity: 0.9; }
+        .nav-container { display: flex; flex-direction: column; align-items: flex-end; }
+        .top-nav { display: flex; gap: 25px; margin-bottom: 22px; list-style: none; }
+        .top-nav a { font-size: 0.88rem; color: #4a5568; text-decoration: none; transition: color 0.2s ease; }
+        .top-nav a:hover { color: var(--primary-color); }
+        .main-nav { display: flex; gap: 40px; list-style: none; }
+        .main-nav a { position: relative; font-size: 1.05rem; font-weight: 700; color: #1a1a1a; text-decoration: none; transition: color 0.2s ease; }
+        .main-nav a::after { content: ''; position: absolute; left: 0; bottom: -6px; width: 0; height: 2px; background-color: var(--primary-color); transition: width 0.3s ease; }
+        .main-nav a:hover { color: var(--primary-color); }
+        .main-nav a:hover::after { width: 100%; }
+
+        @media (max-width: 900px) {
+            header { position: relative; }
+            .header-row { flex-direction: column; align-items: center; gap: 20px; }
+            .nav-container { align-items: center; width: 100%; }
+            .top-nav { justify-content: center; flex-wrap: wrap; gap: 15px; margin-bottom: 15px; }
+            .main-nav { justify-content: center; flex-wrap: wrap; gap: 20px; }
+        }
+
+        /* ===== HERO ===== */
+        .hero { position: relative; padding: 90px 0 100px; background: linear-gradient(135deg, #ffffff 0%, var(--light-bg) 100%); overflow: hidden; }
+        .hero::before, .hero::after { content: ''; position: absolute; border-radius: 50%; filter: blur(60px); opacity: 0.35; z-index: 0; pointer-events: none; }
+        .hero::before { width: 420px; height: 420px; background: radial-gradient(circle, rgba(0,155,119,0.30) 0%, rgba(0,155,119,0) 70%); top: -120px; right: -80px; animation: float 9s ease-in-out infinite; }
+        .hero::after { width: 320px; height: 320px; background: radial-gradient(circle, rgba(11,49,41,0.18) 0%, rgba(11,49,41,0) 70%); bottom: -120px; left: -60px; animation: float 11s ease-in-out infinite reverse; }
+        @keyframes float { 0%, 100% { transform: translateY(0) translateX(0); } 50% { transform: translateY(-24px) translateX(14px); } }
+        .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 60px; align-items: center; }
+        @media (max-width: 768px) { .hero-grid { grid-template-columns: 1fr; gap: 40px; text-align: center; } }
+
+        .event-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(0,155,119,0.10); color: var(--primary-dark); font-size: 0.82rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 8px 16px; border-radius: 24px; margin-bottom: 22px; opacity: 0; animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.05s forwards; }
+        .hero-content h1 { font-size: 2.8rem; font-weight: 700; color: var(--dark-bg); line-height: 1.2; margin-bottom: 20px; opacity: 0; animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards; }
+        .hero-content h1 span { color: var(--primary-color); }
+        .hero-content p { font-size: 1.2rem; color: #4a5568; margin-bottom: 35px; opacity: 0; animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.35s forwards; }
+        .hero-content .btn { opacity: 0; animation: heroFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards; }
+        @keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+
+        .btn { position: relative; display: inline-block; background-color: var(--primary-color); color: white; padding: 16px 32px; font-weight: 600; text-decoration: none; border-radius: 6px; transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease; border: none; cursor: pointer; font-size: 1rem; overflow: hidden; box-shadow: 0 6px 16px rgba(0,155,119,0.25); }
+        .btn:hover { background-color: var(--primary-dark); transform: translateY(-3px); box-shadow: 0 12px 24px rgba(0,155,119,0.35); }
+        .btn:active { transform: translateY(-1px) scale(0.98); }
+        .btn-outline { background: transparent; color: var(--primary-color); border: 2px solid var(--primary-color); box-shadow: none; margin-left: 14px; }
+        .btn-outline:hover { background: var(--primary-color); color: #ffffff; }
+        @media (max-width: 600px) { .btn-outline { margin-left: 0; margin-top: 14px; } }
+        .ripple { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.55); transform: scale(0); animation: rippleEffect 0.6s linear; pointer-events: none; }
+        @keyframes rippleEffect { to { transform: scale(4); opacity: 0; } }
+
+        /* Event detail card in hero */
+        .event-card { position: relative; z-index: 1; background: #ffffff; border-radius: 16px; padding: 38px 34px; box-shadow: 0 24px 60px rgba(0,0,0,0.12); border-top: 5px solid var(--primary-color); opacity: 0; animation: heroFadeUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards; }
+        .event-card h2 { font-size: 1.3rem; color: var(--dark-bg); margin-bottom: 22px; }
+        .event-detail { display: flex; align-items: flex-start; gap: 14px; margin-bottom: 20px; }
+        .event-detail:last-of-type { margin-bottom: 0; }
+        .event-detail .ed-icon { flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; background: rgba(0,155,119,0.10); color: var(--primary-color); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+        .event-detail .ed-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; color: #8a958f; font-weight: 700; margin-bottom: 2px; }
+        .event-detail .ed-value { font-size: 1.05rem; font-weight: 600; color: var(--dark-bg); }
+        .booth-highlight { margin-top: 26px; text-align: center; background: var(--footer-bg); border-radius: 12px; padding: 18px; }
+        .booth-highlight .bh-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: #b7d8cd; font-weight: 700; }
+        .booth-highlight .bh-number { font-size: 2.2rem; font-weight: 700; color: #52ffd3; line-height: 1.1; }
+
+        /* ===== SECTION TITLE ===== */
+        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 18px; font-weight: 700; position: relative; padding-bottom: 18px; }
+        .section-title::after { content: ''; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 70px; height: 4px; border-radius: 4px; background: var(--primary-color); }
+        .section-sub { text-align: center; max-width: 720px; margin: 0 auto 55px; color: #55635c; font-size: 1.1rem; }
+
+        /* ===== SHOWCASE (products) ===== */
+        .showcase { padding: 100px 0; background: #ffffff; }
+        .showcase-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 36px; }
+        .product-card { position: relative; padding: 36px 30px; background: var(--light-bg); border-radius: 12px; border-top: 4px solid var(--primary-color); transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease, background 0.35s ease; overflow: hidden; }
+        .product-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px; background: linear-gradient(90deg, var(--primary-color), #52ffd3); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease; }
+        .product-card:hover { transform: translateY(-10px); box-shadow: 0 22px 40px rgba(0,0,0,0.10); background: #ffffff; }
+        .product-card:hover::before { transform: scaleX(1); }
+        .product-icon { width: 56px; height: 56px; border-radius: 12px; background: rgba(0,155,119,0.10); color: var(--primary-color); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px; }
+        .product-image { width: 100%; height: 200px; object-fit: contain; margin-bottom: 18px; filter: drop-shadow(0 12px 24px rgba(11,49,41,0.12)); }
+        .product-card h3 { font-size: 1.35rem; margin-bottom: 6px; color: var(--dark-bg); }
+        .product-card .product-tag { display: inline-block; font-size: 0.78rem; font-weight: 700; color: var(--primary-dark); background: rgba(0,155,119,0.10); padding: 3px 10px; border-radius: 12px; margin-bottom: 14px; }
+        .product-card p { color: #55635c; font-size: 0.97rem; margin-bottom: 16px; }
+        .product-specs { list-style: none; border-top: 1px solid var(--border-color); padding-top: 16px; }
+        .product-specs li { display: flex; align-items: flex-start; gap: 8px; font-size: 0.9rem; color: var(--text-dark); margin-bottom: 8px; }
+        .product-specs li i { color: var(--primary-color); margin-top: 4px; font-size: 0.8rem; }
+
+        /* ===== PAVILION (dark feature banner) ===== */
+        .pavilion-section { padding: 0 0 100px; background: #ffffff; }
+        .pavilion-box { background: linear-gradient(135deg, #0b3129 0%, #143a30 100%); border-radius: 16px; padding: 56px 48px; color: #ffffff; display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: center; }
+        @media (max-width: 768px) { .pavilion-box { grid-template-columns: 1fr; text-align: center; padding: 40px 28px; } .pavilion-icon-wrap { margin: 0 auto; } }
+        .pavilion-icon-wrap { width: 84px; height: 84px; border-radius: 50%; background: rgba(82,255,211,0.15); display: flex; align-items: center; justify-content: center; font-size: 2.1rem; color: #52ffd3; flex-shrink: 0; }
+        .pavilion-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #52ffd3; margin-bottom: 8px; }
+        .pavilion-box h3 { font-size: 1.7rem; font-weight: 700; color: #ffffff; margin-bottom: 12px; line-height: 1.3; }
+        .pavilion-box p { color: #b7d8cd; font-size: 1.05rem; line-height: 1.65; margin: 0; }
+        .pavilion-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+        @media (max-width: 768px) { .pavilion-pills { justify-content: center; } }
+        .pavilion-pill { background: rgba(255,255,255,0.08); border: 1px solid rgba(82,255,211,0.25); color: #e2f5ef; font-size: 0.85rem; font-weight: 600; padding: 6px 14px; border-radius: 20px; }
+
+        /* ===== TEAM ===== */
+        .team-section { padding: 100px 0; background: var(--light-bg); }
+        .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 30px; }
+        .team-card { background: #ffffff; border-radius: 14px; padding: 36px 26px; text-align: center; box-shadow: 0 8px 24px rgba(0,0,0,0.05); transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.35s ease; }
+        .team-card:hover { transform: translateY(-8px); box-shadow: 0 18px 38px rgba(0,0,0,0.10); }
+        .team-avatar { width: 88px; height: 88px; margin: 0 auto 18px; border-radius: 50%; background: linear-gradient(135deg, var(--primary-color), #52ffd3); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 700; letter-spacing: 1px; }
+        .team-photo { width: 88px; height: 88px; margin: 0 auto 18px; border-radius: 50%; object-fit: cover; display: block; box-shadow: 0 4px 14px rgba(11,49,41,0.18); }
+        .team-card h3 { font-size: 1.2rem; color: var(--dark-bg); margin-bottom: 4px; }
+        .team-card .team-role { color: var(--primary-dark); font-weight: 600; font-size: 0.95rem; }
+
+        /* ===== ROI / leak cost ===== */
+        .roi-section { padding: 100px 0; background: radial-gradient(circle at 15% 20%, rgba(0,155,119,0.10) 0%, rgba(0,155,119,0) 45%), var(--footer-bg); color: #ffffff; position: relative; overflow: hidden; }
+        .roi-section .section-title { color: #ffffff; }
+        .roi-subtitle { text-align: center; max-width: 720px; margin: 0 auto 55px; color: #b7d8cd; font-size: 1.1rem; }
+        .roi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px; margin-bottom: 40px; }
+        .roi-stat { text-align: center; padding: 30px 22px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.10); border-radius: 14px; transition: transform 0.35s ease, background 0.35s ease; }
+        .roi-stat:hover { transform: translateY(-6px); background: rgba(255,255,255,0.08); }
+        .roi-number { font-size: 2.8rem; font-weight: 700; color: #52ffd3; line-height: 1.1; margin-bottom: 8px; }
+        .roi-number span { font-size: 1.4rem; vertical-align: super; }
+        .roi-label { color: #cfe6de; font-size: 0.98rem; }
+        .roi-note { text-align: center; color: #8fb3a8; font-size: 0.88rem; max-width: 760px; margin: 0 auto; }
+
+        /* ===== MEETING / FORM ===== */
+        .offer-section { padding: 100px 0; background: linear-gradient(135deg, #0b3129 0%, #143a30 55%, #0b3129 100%); color: #ffffff; position: relative; overflow: hidden; }
+        .offer-section::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 22px 22px; pointer-events: none; }
+        .offer-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 50px; align-items: center; }
+        @media (max-width: 860px) { .offer-grid { grid-template-columns: 1fr; gap: 36px; } }
+        .offer-badge { display: inline-block; background: rgba(82,255,211,0.15); color: #52ffd3; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 18px; }
+        .offer-info h2 { font-size: 2.3rem; margin-bottom: 12px; line-height: 1.2; }
+        .offer-info > p { color: #b7d8cd; font-size: 1.08rem; margin-bottom: 28px; }
+        .offer-list { list-style: none; }
+        .offer-list li { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 22px; }
+        .offer-list .offer-check { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--primary-color); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+        .offer-list h4 { font-size: 1.1rem; margin-bottom: 4px; color: #ffffff; }
+        .offer-list p { color: #b7d8cd; font-size: 0.95rem; }
+        .offer-form-card { background: #ffffff; border-radius: 16px; padding: 40px 34px; box-shadow: 0 24px 60px rgba(0,0,0,0.25); }
+        .offer-form-card h3 { color: var(--dark-bg); font-size: 1.5rem; margin-bottom: 6px; }
+        .offer-form-card .form-sub { color: #55635c; font-size: 0.95rem; margin-bottom: 24px; }
+        .form-disclaimer { font-size: 0.78rem; color: #8a958f; margin-top: 14px; text-align: center; }
+
+        /* ===== CTA ===== */
+        .cta-section { position: relative; padding: 100px 0 120px; text-align: center; background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-bg) 55%, #143a30 82%, var(--footer-bg) 100%); color: var(--text-light); overflow: hidden; }
+        .cta-section::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 22px 22px; opacity: 0.6; pointer-events: none; }
+        .cta-section .container { position: relative; z-index: 1; }
+        .cta-section h2 { font-size: 2.5rem; margin-bottom: 15px; }
+        .cta-section p { font-size: 1.2rem; color: #a0aec0; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto; }
+
+        /* ===== FOOTER ===== */
+        footer { background-color: var(--footer-bg); color: #ffffff; padding: 70px 0 40px 0; font-size: 0.95rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.2fr 1.5fr 1.3fr; gap: 40px; margin-bottom: 60px; }
+        @media (max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 40px; } }
+        .footer-col h4 { font-size: 1.05rem; font-weight: 600; margin-bottom: 15px; color: #ffffff; }
+        .footer-col p { color: #cfe6de; margin-bottom: 8px; font-weight: 300; }
+        .footer-col a { color: var(--primary-color); text-decoration: none; transition: color 0.2s ease; font-weight: 600; }
+        .footer-col a:hover { color: #52ffd3; }
+        .footer-logo { height: 45px; width: auto; margin-bottom: 20px; border: none; display: block; background: transparent; fill: #ffffff; transition: transform 0.3s ease, opacity 0.3s ease; }
+        .footer-logo:hover { transform: scale(1.05); opacity: 0.9; }
+        .contact-item { margin-bottom: 25px; }
+        .contact-item p { margin-bottom: 4px; }
+        .contact-item a[href^="tel"], .footer-col .cs-email { color: #52ffd3; }
+        .social-links { margin-top: 25px; display: flex; gap: 15px; }
+        .social-icon { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; background-color: #ffffff; color: var(--footer-bg) !important; border-radius: 50%; font-size: 1.1rem; transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease; }
+        .social-icon:hover { transform: scale(1.15) translateY(-2px); background-color: var(--primary-color); color: #ffffff !important; box-shadow: 0 8px 18px rgba(0,155,119,0.4); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: center; gap: 40px; }
+        .footer-bottom a { color: #ffffff; text-decoration: none; font-size: 0.95rem; font-weight: 400; transition: color 0.2s ease; }
+        .footer-bottom a:hover { text-decoration: underline; color: #52ffd3; }
+
+        /* ===== Floating scheduler widget ===== */
+        .sidebar-widget-container { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); z-index: 9999; display: flex; flex-direction: column; align-items: flex-end; font-family: 'Inter', sans-serif; }
+        .scheduler-trigger-btn { position: relative; width: 50px; height: 50px; background-color: var(--primary-color); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15); font-size: 1.3rem; transition: background-color 0.2s ease, transform 0.2s ease; }
+        .scheduler-trigger-btn::after { content: ''; position: absolute; inset: 0; border-radius: 50%; box-shadow: 0 0 0 0 rgba(0,155,119,0.5); animation: schedulerPulse 2.4s ease-out infinite; }
+        @keyframes schedulerPulse { 0% { box-shadow: 0 0 0 0 rgba(0,155,119,0.5); } 70% { box-shadow: 0 0 0 16px rgba(0,155,119,0); } 100% { box-shadow: 0 0 0 0 rgba(0,155,119,0); } }
+        .scheduler-trigger-btn:hover { background-color: var(--primary-dark); transform: scale(1.08); }
+        .scheduler-flyout { position: absolute; right: 0; bottom: 60px; width: 320px; background-color: #f7fbfc; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); padding: 30px 24px 24px 24px; display: none; animation: fadeInUp 0.3s ease-out forwards; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .scheduler-flyout .close-btn { position: absolute; top: 15px; right: 15px; background: none; border: none; font-size: 1.1rem; color: #1a1a1a; cursor: pointer; font-weight: 700; transition: transform 0.2s ease, color 0.2s ease; }
+        .scheduler-flyout .close-btn:hover { transform: rotate(90deg); color: var(--primary-color); }
+        .scheduler-flyout h3 { font-size: 1.35rem; font-weight: 700; color: #2c3e35; margin-bottom: 20px; }
+        .scheduler-flyout p { font-size: 1rem; color: #55635c; line-height: 1.5; margin-bottom: 25px; font-weight: 400; }
+        .book-now-link { text-decoration: none; display: block; width: 100%; }
+        .book-now-btn { width: 100%; background-color: var(--primary-color); color: white; border: none; padding: 16px 20px; border-radius: 30px; font-size: 1rem; font-weight: 600; display: flex; align-items: center; justify-content: space-between; cursor: pointer; transition: background-color 0.2s ease, transform 0.2s ease; text-align: left; }
+        .book-now-btn:hover { background-color: var(--primary-dark); transform: translateY(-2px); }
+        .book-now-btn i { font-size: 0.9rem; transition: transform 0.2s ease; }
+        .book-now-btn:hover i { transform: translateX(4px); }
+
+        @media (max-width: 600px) {
+            .hero-content h1 { font-size: 2.1rem; }
+            .cta-section h2 { font-size: 2rem; }
+            .section-title { font-size: 1.8rem; }
+            .sidebar-widget-container { right: 12px; }
+            .offer-info h2 { font-size: 1.8rem; }
+            .roi-number { font-size: 2.3rem; }
+            .pavilion-box h3 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="cs-logo" viewBox="0 0 180 52"><path d="M.557 25.798c0 13.94 11.332 25.317 25.317 25.317v-8.274c-9.399 0-17.043-7.645-17.043-17.043S16.475 8.755 25.874 8.755V.525C11.934.526.557 11.859.557 25.799Zm28.6-1.799-.585 1.889c-1.35 4.317-3.193 4.317-3.957 4.317-2.159 0-3.643-1.574-3.643-3.777h-8.274c0 6.745 5.216 12.051 11.917 12.051 3.237 0 9.083-1.304 11.826-10.073l.585-1.889c.99-3.147 2.518-4.721 4.497-4.721 2.203 0 3.642 1.799 3.642 4.632h8.274c0-7.375-5.126-12.906-11.916-12.906-5.756-.045-10.253 3.777-12.367 10.477ZM67.2 37.04c0 .63-1.17 1.709-3.013 1.709h-.585c-2.068 0-3.372-1.304-3.372-3.193v-6.25c0-1.89 1.304-3.193 3.372-3.193h.585c1.798 0 3.013 1.034 3.013 1.709 0 .045-.045.134-.135.134l-.81.405h-.09c-.045 0-.09 0-.135-.09-.584-.584-.989-1.079-1.843-1.079h-.585c-1.17 0-2.068.9-2.068 2.069v6.25c0 1.17.899 2.069 2.068 2.069h.585c.45 0 .944-.18 1.259-.495.45-.405.584-.72.72-.72h.09l.809.405c.135.135.135.18.135.27Zm2.968-7.78c0 .855.584 1.53 1.843 2.114.99.45 1.844.854 2.563 1.35.9.719 1.35 1.663 1.35 2.877 0 1.889-1.305 3.193-3.418 3.193h-.855c-1.843 0-3.012-1.08-3.012-1.709 0-.09.044-.135.135-.135l.809-.45h.09c.09 0 .09.045.135.09.54.585.944 1.08 1.843 1.08h.855c1.169 0 2.113-.9 2.113-2.069 0-1.304-.989-1.799-2.653-2.608-2.023-.99-3.148-1.664-3.148-3.643 0-1.888 1.305-3.192 3.373-3.192h.315c1.844 0 3.013 1.079 3.013 1.709 0 .044-.045.09-.135.134l-.81.405h-.09c-.044 0-.09 0-.134-.09-.54-.584-.945-1.079-1.844-1.079h-.315c-1.124 0-2.023.854-2.023 2.024Zm14.3 9.309h-.9c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.9c.134 0 .18.046.18.18v11.827c0 .135-.046.225-.18.225Zm10.207 0h-.854l-.18-.09-5.216-9.578h-.045l.09 9.488c0 .135-.045.18-.18.18h-.9c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.855l.18.09 5.216 9.624h.045l-.135-9.534c0-.134.045-.18.18-.18h.944c.135 0 .18.046.18.18v11.827c.045.135-.045.225-.18.225Zm3.598-9.308c0 .854.584 1.529 1.843 2.113.99.45 1.844.854 2.564 1.35.899.719 1.349 1.663 1.349 2.877 0 1.889-1.304 3.193-3.418 3.193h-.854c-1.844 0-3.013-1.08-3.013-1.709 0-.09.045-.135.135-.135l.81-.45h.089c.09 0 .09.045.135.09.54.585.944 1.08 1.844 1.08h.854c1.169 0 2.114-.9 2.114-2.069 0-1.304-.99-1.799-2.654-2.608-2.023-.99-3.147-1.664-3.147-3.643 0-1.888 1.304-3.192 3.372-3.192h.315c1.844 0 3.013 1.079 3.013 1.709 0 .044-.045.09-.135.134l-.809.405h-.09c-.045 0-.09 0-.135-.09-.54-.584-.945-1.079-1.844-1.079h-.315a2.015 2.015 0 0 0-2.023 2.024Zm13.22-1.844h-2.338c-.135 0-.18.045-.18.18v10.747c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V27.642c0-.135-.045-.18-.18-.18h-2.338c-.135 0-.18-.045-.18-.18v-.72c0-.134.045-.18.18-.18h6.295c.135 0 .18.046.18.18v.675c0 .135-.045.18-.18.18Zm8.185 4.677c.764-.675 1.169-1.484 1.169-2.159v-.225c0-2.068-1.349-3.372-3.418-3.372h-3.777c-.135 0-.18.045-.18.18v11.781c0 .135.045.18.18.18h.899c.135 0 .18-.045.18-.18v-5.261c0-.135.045-.18.18-.18h2.428c.09.045.135.09.135.135l1.844 5.396a.62.62 0 0 0 .18.135h1.034c.09 0 .18-.045.18-.135 0-.045 0-.045.09-.045l-1.934-5.62v-.046c0-.18.36-.225.81-.584Zm-2.384-.36h-2.473c-.135 0-.18-.045-.18-.18v-3.957c0-.135.045-.18.18-.18h2.473c1.169 0 2.114.9 2.114 2.068v.135c0 1.214-.945 2.114-2.114 2.114Zm9.309 7.015h-.585c-2.068 0-3.373-1.304-3.373-3.193v-9.038c0-.135.045-.18.18-.18h.945c.135 0 .18.045.18.18v9.038c0 1.17.899 2.069 2.068 2.069h.585a2.092 2.092 0 0 0 2.068-2.069v-9.038c0-.135.045-.18.18-.18h.944c.135 0 .18.045.18.18v9.038c.045 1.889-1.304 3.193-3.372 3.193Zm11.332-2.159c0 .045-.09.09-.18.135h-.315c-.09 0-.135-.045-.18-.135l-3.238-7.69.135 9.444c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.899c.09 0 .135.09.18.136l3.463 8.184h.045l3.462-8.184c0-.045.09-.09.18-.135h.9c.135 0 .18.045.18.18v11.826c0 .135-.045.18-.18.18h-.9c-.135 0-.18-.045-.18-.18l.135-9.488-3.327 7.734ZM152.1 38.57h-6.386c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h6.386c.135 0 .18.046.18.18v.72c0 .135-.045.18-.18.18h-5.082c-.135 0-.18.045-.18.18v3.957c0 .135.045.18.18.18h4.182c.135 0 .18.045.18.18v.72c0 .134-.045.18-.18.18h-4.182c-.135 0-.18.044-.18.179v4.182c0 .135.045.18.18.18h5.082c.135 0 .18.09.18.18v.72c0 .224-.045.314-.18.314Zm10.252 0h-.854l-.18-.09-5.216-9.578h-.045l.09 9.488c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.854l.18.09 5.216 9.624h.045l-.135-9.534c0-.134.045-.18.18-.18h.944c.135 0 .18.046.18.18v11.827c0 .135-.045.225-.18.225Zm8.769-11.152h-2.338c-.135 0-.18.045-.18.18v10.747c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V27.642c0-.135-.045-.18-.18-.18h-2.338c-.135 0-.18-.045-.18-.18v-.72c0-.134.045-.18.18-.18h6.385c.135 0 .18.046.18.18v.675c-.045.135-.135.18-.27.18Zm2.833 1.844c0 .854.585 1.529 1.844 2.113.989.45 1.844.854 2.563 1.35.899.719 1.349 1.663 1.349 2.877 0 1.889-1.304 3.193-3.417 3.193h-.855c-1.844 0-3.013-1.08-3.013-1.709 0-.09.045-.135.135-.135l.81-.45h.09c.09 0 .09.045.134.09.54.585.945 1.08 1.844 1.08h.855c1.169 0 2.113-.9 2.113-2.069 0-1.304-.989-1.799-2.653-2.608-2.024-.99-3.148-1.664-3.148-3.643 0-1.888 1.304-3.192 3.373-3.192h.315c1.843 0 3.012 1.079 3.012 1.709 0 .044-.045.09-.134.134l-.81.405h-.09c-.045 0-.09 0-.135-.09-.539-.584-.944-1.079-1.843-1.079h-.315a2.015 2.015 0 0 0-2.024 2.024Z"/></symbol>
+    </svg>
+
+    <!-- ===== HEADER ===== -->
+    <header id="siteHeader">
+        <div class="container">
+            <div class="header-row">
+                <div class="logo-wrap">
+                    <a href="https://www.cs-instruments.com/us" target="_blank" class="logo-link">
+                        <svg class="logo" role="img" aria-label="CS INSTRUMENTS Logo"><use href="#cs-logo" xlink:href="#cs-logo"></use></svg>
+                    </a>
+                </div>
+                <div class="nav-container">
+                    <ul class="top-nav">
+                        <li><a href="https://www.cs-instruments.com/us/company/about-us" target="_blank">About us</a></li>
+                        <li><a href="https://www.cs-instruments.com/us/company/news-events" target="_blank">News & Events</a></li>
+                        <li><a href="https://www.cs-instruments.com/us/company/webinars" target="_blank">Webinars</a></li>
+                        <li><a href="https://www.cs-instruments.com/us/company/service" target="_blank">Service</a></li>
+                    </ul>
+                    <ul class="main-nav">
+                        <li><a href="https://www.cs-instruments.com/us/products" target="_blank">Products</a></li>
+                        <li><a href="https://www.cs-instruments.com/us/applications" target="_blank">Applications</a></li>
+                        <li><a href="https://www.cs-instruments.com/us/downloads" target="_blank">Downloads</a></li>
+                        <li><a href="https://www.cs-instruments.com/us/contact" target="_blank">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="event-badge"><i class="fa-solid fa-location-dot"></i> Best Practices EXPO & Conference 2026</span>
+                    <h1>Meet CS INSTRUMENTS at <span>Booth #232</span> in Indianapolis</h1>
+                    <p>Join the CS INSTRUMENTS team at Best Practices 2026, October 13-14. See our latest compressed-air measurement technology live, talk with our specialists, and book a one-on-one meeting at the booth.</p>
+                    <a href="#request-meeting" class="btn">Request a Meeting</a>
+                    <a href="#showcase" class="btn btn-outline">See What We're Showing</a>
+                </div>
+                <div class="event-card">
+                    <h2>Event Details</h2>
+                    <div class="event-detail">
+                        <span class="ed-icon"><i class="fa-regular fa-calendar-days"></i></span>
+                        <div>
+                            <div class="ed-label">Dates</div>
+                            <div class="ed-value">October 13-14, 2026</div>
+                        </div>
+                    </div>
+                    <div class="event-detail">
+                        <span class="ed-icon"><i class="fa-solid fa-location-dot"></i></span>
+                        <div>
+                            <div class="ed-label">Location</div>
+                            <div class="ed-value">Indianapolis, IN, USA</div>
+                        </div>
+                    </div>
+                    <div class="event-detail">
+                        <span class="ed-icon"><i class="fa-solid fa-handshake"></i></span>
+                        <div>
+                            <div class="ed-label">Find Us At</div>
+                            <div class="ed-value">CS INSTRUMENTS Booth</div>
+                        </div>
+                    </div>
+                    <div class="booth-highlight">
+                        <div class="bh-label">Booth Number</div>
+                        <div class="bh-number">#232</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SHOWCASE ===== -->
+    <section class="showcase" id="showcase">
+        <div class="container">
+            <h2 class="section-title reveal">What We're Showing at Booth #232</h2>
+            <p class="section-sub reveal delay-1">Hands-on demos of the measurement technology that helps you monitor consumption, verify efficiency, and stop compressed air waste. Talk specs directly with our engineers on the show floor.</p>
+            <div class="showcase-grid">
+
+                <div class="product-card reveal delay-1">
+                    <img src="https://43972642.fs1.hubspotusercontent-na1.net/hubfs/43972642/Landing%20page/VA_526-removebg-preview.png" alt="CS INSTRUMENTS VA 526 compact inline flow sensor for compressed air and gases" class="product-image">
+                    <span class="product-tag">Compact Inline Flow Sensor</span>
+                    <h3>VA 526</h3>
+                    <p>Compact. Connected. Future-proof. The newly developed VA 526 combines precise flow measurement, consumption monitoring, temperature and - optionally - pressure and humidity/dew point in one compact inline sensor for compressed air and gases, with WiFi and Bluetooth as standard.</p>
+                    <ul class="product-specs">
+                        <li><i class="fa-solid fa-check"></i> Thermal mass flow sensor; air & gases (N2, Ar, CO2, O2, N2O)</li>
+                        <li><i class="fa-solid fa-check"></i> Accuracy ± 1.5% of m.v. ± 0.3% of f.s. (precision ± 1% on request)</li>
+                        <li><i class="fa-solid fa-check"></i> Measuring sections 1/4" to 2" (G or NPT); up to 16 bar, optionally 40 bar</li>
+                        <li><i class="fa-solid fa-check"></i> Modbus-RTU, Ethernet/PoE, IO-Link, WiFi & Bluetooth; 4...20 mA</li>
+                        <li><i class="fa-solid fa-check"></i> Optional flow straightener - no inlet sections required</li>
+                        <li><i class="fa-solid fa-check"></i> CS SensorApp for setup & live readings; EU Cyber Resilience Act ready</li>
+                    </ul>
+                </div>
+
+                <div class="product-card reveal delay-2">
+                    <img src="https://43972642.fs1.hubspotusercontent-na1.net/hubfs/43972642/Sensors/TwinAir/TwinAir.png" alt="CS INSTRUMENTS CS TwinAir plug-and-play online monitoring device" class="product-image">
+                    <span class="product-tag">Online Monitoring</span>
+                    <h3>CS TwinAir</h3>
+                    <p>A plug-and-play online monitoring device and software for all CS INSTRUMENTS and third-party devices. Connect a Modbus sensor, send data to the cloud, and view current and past values from anywhere - with worldwide GSM LTE & WiFi coverage.</p>
+                    <ul class="product-specs">
+                        <li><i class="fa-solid fa-check"></i> Universal compatibility - works with virtually any device</li>
+                        <li><i class="fa-solid fa-check"></i> Plug & play Modbus M8 connection (1 input for sensor/DATABOX)</li>
+                        <li><i class="fa-solid fa-check"></i> GSM LTE & WiFi, worldwide coverage (30+ countries)</li>
+                        <li><i class="fa-solid fa-check"></i> Cloud data logging & visualization with no storage limitations</li>
+                        <li><i class="fa-solid fa-check"></i> Encrypted server connection; centralized dashboard for all stations</li>
+                    </ul>
+                </div>
+
+                <div class="product-card reveal delay-3">
+                    <img src="https://43972642.fs1.hubspotusercontent-na1.net/hubfs/43972642/Sensors/LC%20600/LC%20600.png" alt="CS INSTRUMENTS LeakCam 600 acoustic leak detector with Power Beam Forming" class="product-image">
+                    <span class="product-tag">Leak Detection</span>
+                    <h3>Leak Detectors</h3>
+                    <p>See our acoustic leak detectors live - including the LD 500 / LD 510 UltraCam and the LeakCam 600. Pinpoint leaks, read the leakage rate in cfm, and get the annual cost in dollars right on the display.</p>
+                    <ul class="product-specs">
+                        <li><i class="fa-solid fa-check"></i> LD 500 / LD 510: 30 MEMS microphones, on-screen leak visualization</li>
+                        <li><i class="fa-solid fa-check"></i> LeakCam 600: 64 MEMS mics, Power Beam Forming, detects from up to 390 ft</li>
+                        <li><i class="fa-solid fa-check"></i> Automatic laser distance measurement for accurate cost calculation</li>
+                        <li><i class="fa-solid fa-check"></i> ISO 50001 reports via CS Leak Reporter</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== LEAK DETECTION PAVILION ===== -->
+    <section class="pavilion-section">
+        <div class="container">
+            <div class="pavilion-box reveal">
+                <div class="pavilion-icon-wrap"><i class="fa-solid fa-tent"></i></div>
+                <div>
+                    <div class="pavilion-label">Hosted Again at Best Practices 2026</div>
+                    <h3>The CS INSTRUMENTS Leak Detection Pavilion</h3>
+                    <p>We're proud to host the Leak Detection Pavilion once again. Get hands-on with our acoustic leak detectors, watch live leak-finding demonstrations, and learn how to turn compressed air leaks into documented, dollar-quantified savings.</p>
+                    <div class="pavilion-pills">
+                        <span class="pavilion-pill">Live leak-finding demos</span>
+                        <span class="pavilion-pill">Cost-of-leakage walkthroughs</span>
+                        <span class="pavilion-pill">ISO 50001 reporting</span>
+                        <span class="pavilion-pill">Ask the specialists</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== TEAM ===== -->
+    <section class="team-section">
+        <div class="container">
+            <h2 class="section-title reveal">Meet the CS INSTRUMENTS Team</h2>
+            <p class="section-sub reveal delay-1">Our team will be on the floor for both days. Come say hello, ask questions, and let us help you find the right measurement solution.</p>
+            <div class="team-grid">
+                <div class="team-card reveal delay-1">
+                    <img src="https://43972642.fs1.hubspotusercontent-na1.net/hubfs/43972642/Headshots/Savannah%20Corporate%20Photography-Martin-10%20(2).jpg" alt="Martin Zeller, Managing Director at CS INSTRUMENTS" class="team-photo">
+                    <h3>Martin Zeller</h3>
+                    <div class="team-role">Managing Director</div>
+                </div>
+                <div class="team-card reveal delay-2">
+                    <img src="https://43972642.fs1.hubspotusercontent-na1.net/hubfs/43972642/Headshots/Savannah%20Corporate%20Photography-RJ-7.jpg" alt="RJ Bennett, Technical Support and Customer Service at CS INSTRUMENTS" class="team-photo">
+                    <h3>RJ Bennett</h3>
+                    <div class="team-role">Technical Support & Customer Service</div>
+                </div>
+                <div class="team-card reveal delay-3">
+                    <img src="https://43972642.fs1.hubspotusercontent-na1.net/hubfs/43972642/Headshots/image%20(8).png" alt="Alia DeLong, Sales Assistant at CS INSTRUMENTS" class="team-photo">
+                    <h3>Alia DeLong</h3>
+                    <div class="team-role">Sales Assistant</div>
+                </div>
+                <div class="team-card reveal delay-4">
+                    <img src="https://43972642.fs1.hubspotusercontent-na1.net/hubfs/43972642/Headshots/Janet%20Headshot.jpg" alt="Janet Goodwin, Marketing at CS INSTRUMENTS" class="team-photo">
+                    <h3>Janet Goodwin</h3>
+                    <div class="team-role">Marketing</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ROI / LEAK COST ===== -->
+    <section class="roi-section">
+        <div class="container">
+            <h2 class="section-title reveal">Finding Leaks Pays Off</h2>
+            <p class="roi-subtitle reveal delay-1">A sample calculation for a medium-sized company shows just how much compressed air leaks can cost - and why leak detection is worth a stop at our Pavilion.</p>
+            <div class="roi-grid">
+                <div class="roi-stat reveal delay-1">
+                    <div class="roi-number">150 <span>kW</span></div>
+                    <div class="roi-label">Installed compressor capacity</div>
+                </div>
+                <div class="roi-stat reveal delay-2">
+                    <div class="roi-number">6,000</div>
+                    <div class="roi-label">Operating hours per year</div>
+                </div>
+                <div class="roi-stat reveal delay-3">
+                    <div class="roi-number">$72,000<span>*</span></div>
+                    <div class="roi-label">Annual electricity cost at $0.08/kWh</div>
+                </div>
+                <div class="roi-stat reveal delay-4">
+                    <div class="roi-number">$18,000<span>*</span></div>
+                    <div class="roi-label">Lost per year to ~25% leakage</div>
+                </div>
+            </div>
+            <p class="roi-note reveal">*Sample calculation only: 150 kW compressor x 6,000 operating hrs/year x $0.08/kWh = $72,000/year. Approx. 25% of compressed air is typically lost to leaks = $18,000/year. Actual figures depend on your system, electricity rate, and operating profile.</p>
+        </div>
+    </section>
+
+    <!-- ===== REQUEST A MEETING / FORM ===== -->
+    <section class="offer-section" id="request-meeting">
+        <div class="container">
+            <div class="offer-grid">
+                <div class="offer-info reveal">
+                    <span class="offer-badge">Booth #232 • Oct 13-14, Indianapolis</span>
+                    <h2>Request a Meeting at Best Practices 2026</h2>
+                    <p>Reserve time with a CS INSTRUMENTS specialist before the show. Tell us what you'd like to see and we'll have the right person and the right equipment ready at Booth #232.</p>
+                    <ul class="offer-list">
+                        <li>
+                            <span class="offer-check"><i class="fa-solid fa-calendar-check"></i></span>
+                            <div>
+                                <h4>Skip the Wait</h4>
+                                <p>Pre-book a time slot so we can dedicate our full attention to your application.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="offer-check"><i class="fa-solid fa-screwdriver-wrench"></i></span>
+                            <div>
+                                <h4>Live Product Demos</h4>
+                                <p>See the VA 526, CS TwinAir, and our leak detectors in action - and visit the Leak Detection Pavilion.</p>
+                            </div>
+                        </li>
+                        <li>
+                            <span class="offer-check"><i class="fa-solid fa-comments"></i></span>
+                            <div>
+                                <h4>Talk to the Right People</h4>
+                                <p>Meet Martin, RJ, Alia, and Janet to discuss specs, support, and your monitoring goals.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="offer-form-card reveal delay-1">
+                    <h3>Request a Meeting</h3>
+                    <p class="form-sub">Book a time with a CS INSTRUMENTS team member to meet at Booth #232 in Indianapolis.</p>
+
+                    <!-- HubSpot Meeting Link (PRESERVED EXACTLY) -->
+                    <a href="https://meetings.hubspot.com/martin-zeller/one-on-one" target="_blank" rel="noopener" class="btn" style="width: 100%; text-align: center; box-sizing: border-box;">Request a Meeting</a>
+
+                    <p class="form-disclaimer">We respect your privacy. Your details are used only to arrange your meeting at Best Practices 2026 and will never be sold.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="reveal">See You in Indianapolis</h2>
+            <p class="reveal delay-1">Prefer to lock in a time now? Book a one-on-one with our team and we'll meet you at Booth #232 during Best Practices 2026.</p>
+            <div class="reveal delay-2">
+                <a href="https://meetings.hubspot.com/martin-zeller/one-on-one" target="_blank" class="btn">Schedule a Meeting</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="https://www.cs-instruments.com/us" target="_blank" class="logo-link">
+                        <svg class="footer-logo" role="img" aria-label="CS INSTRUMENTS Logo"><use href="#cs-logo" xlink:href="#cs-logo"></use></svg>
+                    </a>
+                </div>
+                <div class="footer-col">
+                    <div class="contact-item">
+                        <p>CS INSTRUMENTS USA INC.</p>
+                        <p>8237 Pinellas Drive</p>
+                        <p>Bluffton, South Carolina 29909</p>
+                        <p>USA</p>
+                        <p style="margin-top:10px;"><a href="tel:+18435996700"><i class="fa-solid fa-phone" style="margin-right:6px;"></i> +1 (843) 599 6700</a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>RFQs / Billing / General information:</h4>
+                        <p><a class="cs-email" data-user="info-us" data-domain="cs-instruments.com"><i class="fa-solid fa-envelope" style="margin-right:6px;"></i> <span class="cs-email-text"></span></a></p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Technical support / Calibration inquiries:</h4>
+                        <p><a class="cs-email" data-user="support-us" data-domain="cs-instruments.com"><i class="fa-solid fa-envelope" style="margin-right:6px;"></i> <span class="cs-email-text"></span></a></p>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="contact-item">
+                        <h4>Headquarter</h4>
+                        <p>Zindelsteiner Straße 15</p>
+                        <p>D-78052 VS-Tannheim</p>
+                        <p style="margin-top:10px;"><a href="tel:+497705978990"><i class="fa-solid fa-phone" style="margin-right:6px;"></i> +49 7705 978 99 0</a></p>
+                        <p><a class="cs-email" data-user="info" data-domain="cs-instruments.com"><i class="fa-solid fa-envelope" style="margin-right:6px;"></i> <span class="cs-email-text"></span></a></p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/cs_instruments_germany/" target="_blank" class="social-icon" aria-label="CS INSTRUMENTS on Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://www.linkedin.com/company/cs-instruments-usa/" target="_blank" class="social-icon" aria-label="CS INSTRUMENTS on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com/channel/UCXd2PHrMidAJj3xIuSd0NKQ" target="_blank" class="social-icon" aria-label="CS INSTRUMENTS on YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <a href="https://www.cs-instruments.com/us/legal/imprint" target="_blank">Imprint</a>
+                <a href="https://www.cs-instruments.com/us/legal/privacy-policy" target="_blank">Privacy policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== FLOATING SCHEDULER WIDGET (PRESERVED EXACTLY) ===== -->
+    <div class="sidebar-widget-container">
+        <div class="scheduler-flyout" id="schedulerFlyout">
+            <button class="close-btn" onclick="toggleScheduler()" aria-label="Close scheduler">&times;</button>
+            <h3>Meet us at Booth #232</h3>
+            <p>Heading to Best Practices 2026? Book a time with the CS INSTRUMENTS team and we'll meet you on the show floor.</p>
+            <a href="https://meetings.hubspot.com/martin-zeller/one-on-one" target="_blank" class="book-now-link">
+                <button class="book-now-btn">
+                    <span>Book an appointment now</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </a>
+        </div>
+        <div class="sidebar-widget-buttons">
+            <div class="scheduler-trigger-btn" onclick="toggleScheduler()" role="button" aria-label="Open meeting scheduler">
+                <i class="fa-regular fa-calendar-days"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleScheduler() {
+            var flyout = document.getElementById('schedulerFlyout');
+            flyout.style.display = (flyout.style.display === 'block') ? 'none' : 'block';
+        }
+
+        (function () {
+            var emails = document.querySelectorAll('.cs-email');
+            emails.forEach(function (el) {
+                var user = el.getAttribute('data-user');
+                var domain = el.getAttribute('data-domain');
+                if (!user || !domain) return;
+                var address = user + '@' + domain;
+                el.setAttribute('href', 'mailto:' + address);
+                var textSpan = el.querySelector('.cs-email-text');
+                if (textSpan) { textSpan.textContent = address; }
+                else { el.appendChild(document.createTextNode(' ' + address)); }
+            });
+        })();
+
+        (function () {
+            var revealEls = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window)) {
+                revealEls.forEach(function (el) { el.classList.add('is-visible'); });
+                return;
+            }
+            var observer = new IntersectionObserver(function (entries, obs) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) { entry.target.classList.add('is-visible'); obs.unobserve(entry.target); }
+                });
+            }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+            revealEls.forEach(function (el) { observer.observe(el); });
+        })();
+
+        (function () {
+            var header = document.getElementById('siteHeader');
+            if (!header) return;
+            var onScroll = function () { header.classList.toggle('scrolled', window.scrollY > 20); };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
+
+        (function () {
+            var buttons = document.querySelectorAll('.btn');
+            buttons.forEach(function (btn) {
+                btn.addEventListener('click', function (e) {
+                    var rect = btn.getBoundingClientRect();
+                    var size = Math.max(rect.width, rect.height);
+                    var ripple = document.createElement('span');
+                    ripple.className = 'ripple';
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                    ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+                    btn.appendChild(ripple);
+                    setTimeout(function () { ripple.remove(); }, 600);
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>
