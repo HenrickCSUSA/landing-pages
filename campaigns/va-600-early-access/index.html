@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VC 600 Clamp-On Flow Meter - Coming Soon | CS INSTRUMENTS</title>
+    <meta name="description" content="The VC 600 is CS INSTRUMENTS' brand-new clamp-on flow meter for compressed air and nitrogen. No pipe cutting, no process interruption, built-in Bluetooth.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://js.hsforms.net/forms/embed/43972642.js" defer></script>
+    <style>
+        :root {
+            --primary:      #009b77;
+            --primary-dark: #007f61;
+            --mint:         #52ffd3;
+            --dark-forest:  #0b3129;
+            --light-bg:     #f4f7f6;
+            --text-dark:    #2d3748;
+            --border:       #e2e8f0;
+            --muted-teal:   #b7d8cd;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+            }
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* ---- SCROLL REVEAL ---- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: opacity, transform;
+        }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .reveal.delay-1 { transition-delay: 0.1s; }
+        .reveal.delay-2 { transition-delay: 0.2s; }
+        .reveal.delay-3 { transition-delay: 0.3s; }
+        .reveal.delay-4 { transition-delay: 0.4s; }
+
+        /* ---- HEADER ---- */
+        header {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: saturate(180%) blur(10px);
+            -webkit-backdrop-filter: saturate(180%) blur(10px);
+            padding: 16px 0;
+            border-bottom: 4px solid var(--primary);
+            position: sticky; top: 0; z-index: 1000;
+            transition: box-shadow 0.3s ease;
+        }
+        header.scrolled { box-shadow: 0 6px 24px rgba(0,0,0,0.07); }
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+        }
+        .logo-link { display: inline-block; text-decoration: none; }
+        .logo {
+            height: 48px; width: auto; display: block;
+            fill: #009b77;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .logo-link:hover .logo { transform: scale(1.04); opacity: 0.9; }
+
+        /* ---- BUTTONS ---- */
+        .btn {
+            position: relative; display: inline-block;
+            background: var(--primary); color: #ffffff;
+            padding: 14px 28px; font-weight: 600; text-decoration: none;
+            border-radius: 6px; border: none; cursor: pointer;
+            font-size: 0.97rem; font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+            box-shadow: 0 6px 16px rgba(0,155,119,0.25);
+        }
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0,155,119,0.35);
+        }
+        .btn:active { transform: translateY(-1px) scale(0.98); }
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            box-shadow: none;
+        }
+        .btn-outline:hover { background: var(--primary); color: #ffffff; }
+        .ripple {
+            position: absolute; border-radius: 50%;
+            background: rgba(255,255,255,0.55); transform: scale(0);
+            animation: rippleEffect 0.6s linear; pointer-events: none;
+        }
+        @keyframes rippleEffect { to { transform: scale(4); opacity: 0; } }
+
+        /* ---- HERO ---- */
+        .hero {
+            min-height: 92vh;
+            background: linear-gradient(135deg, var(--dark-forest) 0%, #143a30 55%, var(--dark-forest) 100%);
+            color: #ffffff;
+            position: relative; overflow: hidden;
+            display: flex; align-items: center;
+            padding: 110px 0 90px;
+        }
+        .hero::before {
+            content: ''; position: absolute; inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 22px 22px; pointer-events: none;
+        }
+        .hero-glow-tr {
+            position: absolute;
+            width: 700px; height: 700px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(82,255,211,0.09) 0%, rgba(82,255,211,0) 70%);
+            top: -220px; right: -200px; pointer-events: none;
+        }
+        .hero-glow-bl {
+            position: absolute;
+            width: 500px; height: 500px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,155,119,0.14) 0%, rgba(0,155,119,0) 70%);
+            bottom: -200px; left: -150px; pointer-events: none;
+        }
+        .hero-grid {
+            position: relative; z-index: 1;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(82,255,211,0.12);
+            border: 1px solid rgba(82,255,211,0.35);
+            color: var(--mint);
+            font-size: 0.8rem; font-weight: 700; letter-spacing: 1px;
+            text-transform: uppercase; padding: 7px 16px;
+            border-radius: 20px; margin-bottom: 24px;
+            opacity: 0; animation: heroFadeUp 0.8s cubic-bezier(0.22,1,0.36,1) 0s forwards;
+        }
+        .hero-badge i { animation: pulseDot 1.8s ease-in-out infinite; }
+        @keyframes pulseDot {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50%       { opacity: 0.4; transform: scale(0.8); }
+        }
+        .hero-content h1 {
+            font-size: 3rem; font-weight: 700; line-height: 1.17;
+            margin-bottom: 12px; color: #ffffff;
+            opacity: 0; animation: heroFadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.1s forwards;
+        }
+        .hero-content h1 span { color: var(--mint); }
+        .hero-subtitle {
+            font-size: 1.25rem; color: var(--muted-teal); font-weight: 600;
+            margin-bottom: 24px;
+            opacity: 0; animation: heroFadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.25s forwards;
+        }
+        .hero-desc {
+            font-size: 1.05rem; color: var(--muted-teal); line-height: 1.78;
+            margin-bottom: 40px;
+            opacity: 0; animation: heroFadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.4s forwards;
+        }
+        .hero-cta-row {
+            display: flex; gap: 14px; flex-wrap: wrap; align-items: center;
+            opacity: 0; animation: heroFadeUp 0.9s cubic-bezier(0.22,1,0.36,1) 0.55s forwards;
+        }
+        .btn-lg { padding: 16px 34px; font-size: 1rem; }
+        .btn-ghost {
+            background: transparent; color: #ffffff;
+            border: 2px solid rgba(255,255,255,0.30); box-shadow: none;
+            padding: 16px 34px; font-size: 1rem;
+        }
+        .btn-ghost:hover {
+            border-color: var(--mint); color: var(--mint);
+            background: rgba(82,255,211,0.08); transform: translateY(-3px);
+        }
+        @keyframes heroFadeUp {
+            from { opacity: 0; transform: translateY(28px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Hero teaser panel */
+        .hero-teaser {
+            opacity: 0; animation: heroFadeUp 1s cubic-bezier(0.22,1,0.36,1) 0.45s forwards;
+            display: flex; flex-direction: column; gap: 16px;
+        }
+        .teaser-label {
+            font-size: 0.75rem; font-weight: 700; letter-spacing: 1.5px;
+            text-transform: uppercase; color: var(--mint);
+            margin-bottom: 4px; display: block;
+        }
+        .teaser-card {
+            display: flex; align-items: flex-start; gap: 16px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 14px; padding: 20px 22px;
+            transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        }
+        .teaser-card:hover {
+            background: rgba(255,255,255,0.10);
+            border-color: rgba(82,255,211,0.30);
+            transform: translateX(4px);
+        }
+        .teaser-icon {
+            flex-shrink: 0; width: 44px; height: 44px; border-radius: 11px;
+            background: rgba(0,155,119,0.30); color: var(--mint);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.15rem;
+        }
+        .teaser-card h4 { font-size: 1rem; font-weight: 700; color: #ffffff; margin-bottom: 4px; }
+        .teaser-card p  { font-size: 0.90rem; color: #9bbcb2; line-height: 1.55; margin: 0; }
+
+
+
+        /* ---- FORM SECTION ---- */
+        .form-section {
+            padding: 110px 0;
+            background: #ffffff;
+            position: relative; overflow: hidden;
+        }
+        .form-section::before {
+            content: ''; position: absolute;
+            width: 500px; height: 500px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,155,119,0.07) 0%, rgba(0,155,119,0) 70%);
+            top: -160px; left: -120px; pointer-events: none;
+        }
+        .form-section::after {
+            content: ''; position: absolute;
+            width: 400px; height: 400px; border-radius: 50%;
+            background: radial-gradient(circle, rgba(0,155,119,0.05) 0%, rgba(0,155,119,0) 70%);
+            bottom: -120px; right: -100px; pointer-events: none;
+        }
+        .form-layout {
+            position: relative; z-index: 1;
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 64px; align-items: start;
+        }
+        .form-info h2 {
+            font-size: 2.2rem; font-weight: 700; color: #1a1a1a;
+            line-height: 1.22; margin-bottom: 16px;
+        }
+        .form-info h2 span { color: var(--primary); }
+        .form-info > p {
+            font-size: 1.05rem; color: #55635c;
+            line-height: 1.75; margin-bottom: 32px;
+        }
+        .form-bullets { display: flex; flex-direction: column; gap: 14px; }
+        .form-bullet {
+            display: flex; align-items: flex-start; gap: 14px;
+            background: var(--light-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px; padding: 16px 20px;
+            transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+        }
+        .form-bullet:hover {
+            background: #ffffff;
+            border-color: var(--primary);
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(0,155,119,0.08);
+        }
+        .form-bullet-icon {
+            flex-shrink: 0; width: 38px; height: 38px; border-radius: 10px;
+            background: rgba(0,155,119,0.12); color: var(--primary);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1rem;
+        }
+        .form-bullet-text strong {
+            color: #1a1a1a; font-size: 0.97rem; display: block; margin-bottom: 2px;
+        }
+        .form-bullet-text p {
+            color: #55635c; font-size: 0.92rem; line-height: 1.5; margin: 0;
+        }
+        .staytuned-line {
+            display: flex; align-items: center; gap: 10px; margin-top: 28px;
+            font-size: 1rem; color: var(--primary); font-weight: 600;
+        }
+
+        /* ---- VC 600 FORM CARD ---- */
+        .vc600-form-card {
+            background: var(--dark-forest);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px; padding: 40px 36px;
+            box-shadow: 0 24px 60px rgba(11,49,41,0.18);
+        }
+        .vc600-form-card h3 {
+            color: #ffffff; font-size: 1.4rem; font-weight: 700; margin-bottom: 6px;
+        }
+        .vc600-form-card .form-sub-light {
+            color: var(--muted-teal); font-size: 0.95rem;
+            margin-bottom: 28px; line-height: 1.65;
+        }
+
+        /* HubSpot form overrides -- labels */
+        .vc600-form-card .hs-form-field > label,
+        .vc600-form-card .hs-form-field legend,
+        .vc600-form-card label {
+            color: #ffffff !important; font-size: 0.88rem !important;
+            font-weight: 600 !important; letter-spacing: 0.3px !important;
+            margin-bottom: 6px !important; display: block !important;
+        }
+        .vc600-form-card .hs-form-required { color: var(--mint) !important; }
+
+        /* inputs */
+        .vc600-form-card .hs-form-field input:not([type=submit]):not([type=checkbox]):not([type=radio]),
+        .vc600-form-card .hs-form-field select,
+        .vc600-form-card .hs-form-field textarea {
+            background: rgba(255,255,255,0.12) !important;
+            border: 1px solid rgba(255,255,255,0.28) !important;
+            border-radius: 8px !important; color: #ffffff !important;
+            padding: 11px 14px !important; font-size: 0.95rem !important;
+            width: 100% !important; font-family: 'Inter', sans-serif !important;
+            transition: border-color 0.2s ease, background 0.2s ease !important;
+        }
+        .vc600-form-card .hs-form-field input::placeholder,
+        .vc600-form-card .hs-form-field textarea::placeholder {
+            color: rgba(255,255,255,0.35) !important;
+        }
+        .vc600-form-card .hs-form-field input:focus:not([type=submit]),
+        .vc600-form-card .hs-form-field select:focus,
+        .vc600-form-card .hs-form-field textarea:focus {
+            border-color: var(--mint) !important;
+            background: rgba(255,255,255,0.18) !important;
+            outline: none !important;
+            box-shadow: 0 0 0 3px rgba(82,255,211,0.15) !important;
+        }
+        .vc600-form-card select {
+            background: rgba(255,255,255,0.15) !important;
+            color: #ffffff !important;
+        }
+        .vc600-form-card select option {
+            background: var(--dark-forest) !important; color: #ffffff !important;
+        }
+
+        /* submit */
+        .vc600-form-card input[type=submit],
+        .vc600-form-card .hs-button {
+            background: var(--primary) !important;
+            color: #ffffff !important; border: none !important;
+            border-radius: 8px !important; padding: 14px 28px !important;
+            font-size: 1rem !important; font-weight: 700 !important;
+            width: 100% !important; cursor: pointer !important;
+            margin-top: 8px !important;
+            box-shadow: 0 6px 18px rgba(0,155,119,0.35) !important;
+            font-family: 'Inter', sans-serif !important;
+            transition: background 0.25s ease, transform 0.2s ease !important;
+        }
+        .vc600-form-card input[type=submit]:hover,
+        .vc600-form-card .hs-button:hover {
+            background: var(--primary-dark) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 10px 26px rgba(0,155,119,0.45) !important;
+        }
+
+        /* errors */
+        .vc600-form-card .hs-error-msg,
+        .vc600-form-card .hs-error-msgs li {
+            color: #ffb3b3 !important; font-size: 0.82rem !important;
+            margin-top: 4px !important;
+        }
+
+        /* spacing / layout */
+        .vc600-form-card .hs-form-field { margin-bottom: 16px !important; }
+        .vc600-form-card .hs-form          { width: 100% !important; }
+        .vc600-form-card fieldset          { max-width: 100% !important; border: none !important; padding: 0 !important; }
+        .vc600-form-card .form-columns-2 .hs-form-field         { width: 48% !important; display: inline-block !important; }
+        .vc600-form-card .form-columns-2 .hs-form-field + .hs-form-field { margin-left: 4% !important; }
+
+        .form-disclaimer-light {
+            font-size: 0.78rem; color: #6b9e90;
+            margin-top: 16px; text-align: center; line-height: 1.5;
+        }
+
+        /* ---- FOOTER ---- */
+        footer {
+            background: var(--dark-forest); color: #ffffff;
+            padding: 70px 0 40px; font-size: 0.95rem;
+        }
+        .footer-grid {
+            display: grid; grid-template-columns: 1.2fr 1.5fr 1.3fr;
+            gap: 40px; margin-bottom: 60px;
+        }
+        .footer-col h4 { font-size: 1.05rem; font-weight: 600; margin-bottom: 15px; color: #ffffff; }
+        .footer-col p { color: #cfe6de; margin-bottom: 8px; font-weight: 300; }
+        .footer-col a {
+            color: var(--mint); text-decoration: none;
+            font-weight: 600; transition: color 0.2s ease;
+        }
+        .footer-col a:hover { color: #ffffff; }
+        .footer-logo {
+            height: 45px; width: auto; margin-left: 0;
+            margin-bottom: 20px; display: block;
+            fill: #ffffff;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        .footer-logo:hover { transform: scale(1.05); opacity: 0.9; }
+        .contact-item { margin-bottom: 25px; }
+        .contact-item p { margin-bottom: 4px; }
+        .social-links { margin-top: 25px; display: flex; gap: 15px; }
+        .social-icon {
+            display: flex; align-items: center; justify-content: center;
+            width: 36px; height: 36px; background: #ffffff;
+            color: var(--dark-forest) !important; border-radius: 50%; font-size: 1.1rem;
+            transition: transform 0.25s ease, background 0.25s ease,
+                        color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.15) translateY(-2px);
+            background: var(--primary); color: #ffffff !important;
+            box-shadow: 0 8px 18px rgba(0,155,119,0.4);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 30px;
+            display: flex; justify-content: center; gap: 40px;
+        }
+        .footer-bottom a {
+            color: #ffffff; text-decoration: none; font-size: 0.95rem;
+            font-weight: 400; transition: color 0.2s ease;
+        }
+        .footer-bottom a:hover { text-decoration: underline; color: var(--mint); }
+
+        /* ---- FLOATING SCHEDULER ---- */
+        .sidebar-widget-container {
+            position: fixed; right: 20px; top: 50%; transform: translateY(-50%);
+            z-index: 9999; display: flex; flex-direction: column; align-items: flex-end;
+            font-family: 'Inter', sans-serif;
+        }
+        .scheduler-trigger-btn {
+            position: relative;
+            width: 50px; height: 50px; background: var(--primary); color: #ffffff;
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15); font-size: 1.3rem;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .scheduler-trigger-btn::after {
+            content: ''; position: absolute; inset: 0; border-radius: 50%;
+            box-shadow: 0 0 0 0 rgba(0,155,119,0.5);
+            animation: schedulerPulse 2.4s ease-out infinite;
+        }
+        @keyframes schedulerPulse {
+            0%   { box-shadow: 0 0 0 0 rgba(0,155,119,0.5); }
+            70%  { box-shadow: 0 0 0 16px rgba(0,155,119,0); }
+            100% { box-shadow: 0 0 0 0 rgba(0,155,119,0); }
+        }
+        .scheduler-trigger-btn:hover { background: var(--primary-dark); transform: scale(1.08); }
+        .scheduler-flyout {
+            position: absolute; right: 0; bottom: 60px; width: 300px;
+            background: #f7fbfc; border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15); padding: 30px 24px 24px;
+            display: none; animation: fadeInUp 0.3s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .scheduler-flyout .close-btn {
+            position: absolute; top: 14px; right: 14px; background: none; border: none;
+            font-size: 1.1rem; color: #1a1a1a; cursor: pointer; font-weight: 700;
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+        .scheduler-flyout .close-btn:hover { transform: rotate(90deg); color: var(--primary); }
+        .scheduler-flyout h3 { font-size: 1.15rem; font-weight: 700; color: #2c3e35; margin-bottom: 12px; }
+        .scheduler-flyout p { font-size: 0.93rem; color: #55635c; line-height: 1.55; margin-bottom: 22px; }
+        .book-now-link { text-decoration: none; display: block; width: 100%; }
+        .book-now-btn {
+            width: 100%; background: var(--primary); color: #ffffff; border: none;
+            padding: 14px 20px; border-radius: 30px; font-size: 0.97rem; font-weight: 600;
+            display: flex; align-items: center; justify-content: space-between;
+            cursor: pointer; transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .book-now-btn:hover { background: var(--primary-dark); transform: translateY(-2px); }
+        .book-now-btn i { transition: transform 0.2s ease; }
+        .book-now-btn:hover i { transform: translateX(4px); }
+
+        /* ---- RESPONSIVE ---- */
+        @media (max-width: 900px) {
+            .hero-grid, .form-layout {
+                grid-template-columns: 1fr; gap: 48px;
+            }
+            .hero { min-height: auto; padding: 90px 0 70px; }
+            .form-section { padding: 90px 0; }
+        }
+        @media (max-width: 768px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 36px; }
+        }
+        @media (max-width: 600px) {
+            .hero-content h1 { font-size: 2.2rem; }
+            .section-title { font-size: 1.75rem; }
+            .form-info h2 { font-size: 1.8rem; }
+            .sidebar-widget-container { right: 12px; }
+            .vc600-form-card { padding: 28px 20px; }
+            .hero-cta-row { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CS INSTRUMENTS SVG Logo Symbol -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="cs-logo" viewBox="0 0 180 52"><path d="M.557 25.798c0 13.94 11.332 25.317 25.317 25.317v-8.274c-9.399 0-17.043-7.645-17.043-17.043S16.475 8.755 25.874 8.755V.525C11.934.526.557 11.859.557 25.799Zm28.6-1.799-.585 1.889c-1.35 4.317-3.193 4.317-3.957 4.317-2.159 0-3.643-1.574-3.643-3.777h-8.274c0 6.745 5.216 12.051 11.917 12.051 3.237 0 9.083-1.304 11.826-10.073l.585-1.889c.99-3.147 2.518-4.721 4.497-4.721 2.203 0 3.642 1.799 3.642 4.632h8.274c0-7.375-5.126-12.906-11.916-12.906-5.756-.045-10.253 3.777-12.367 10.477ZM67.2 37.04c0 .63-1.17 1.709-3.013 1.709h-.585c-2.068 0-3.372-1.304-3.372-3.193v-6.25c0-1.89 1.304-3.193 3.372-3.193h.585c1.798 0 3.013 1.034 3.013 1.709 0 .045-.045.134-.135.134l-.81.405h-.09c-.045 0-.09 0-.135-.09-.584-.584-.989-1.079-1.843-1.079h-.585c-1.17 0-2.068.9-2.068 2.069v6.25c0 1.17.899 2.069 2.068 2.069h.585c.45 0 .944-.18 1.259-.495.45-.405.584-.72.72-.72h.09l.809.405c.135.135.135.18.135.27Zm2.968-7.78c0 .855.584 1.53 1.843 2.114.99.45 1.844.854 2.563 1.35.9.719 1.35 1.663 1.35 2.877 0 1.889-1.305 3.193-3.418 3.193h-.855c-1.843 0-3.012-1.08-3.012-1.709 0-.09.044-.135.135-.135l.809-.45h.09c.09 0 .09.045.135.09.54.585.944 1.08 1.843 1.08h.855c1.169 0 2.113-.9 2.113-2.069 0-1.304-.989-1.799-2.653-2.608-2.023-.99-3.148-1.664-3.148-3.643 0-1.888 1.305-3.192 3.373-3.192h.315c1.844 0 3.013 1.079 3.013 1.709 0 .044-.045.09-.135.134l-.81.405h-.09c-.044 0-.09 0-.134-.09-.54-.584-.945-1.079-1.844-1.079h-.315c-1.124 0-2.023.854-2.023 2.024Zm14.3 9.309h-.9c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.9c.134 0 .18.046.18.18v11.827c0 .135-.046.225-.18.225Zm10.207 0h-.854l-.18-.09-5.216-9.578h-.045l.09 9.488c0 .135-.045.18-.18.18h-.9c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.855l.18.09 5.216 9.624h.045l-.135-9.534c0-.134.045-.18.18-.18h.944c.135 0 .18.046.18.18v11.827c.045.135-.045.225-.18.225Zm3.598-9.308c0 .854.584 1.529 1.843 2.113.99.45 1.844.854 2.564 1.35.899.719 1.349 1.663 1.349 2.877 0 1.889-1.304 3.193-3.418 3.193h-.854c-1.844 0-3.013-1.08-3.013-1.709 0-.09.045-.135.135-.135l.81-.45h.089c.09 0 .09.045.135.09.54.585.944 1.08 1.844 1.08h.854c1.169 0 2.114-.9 2.114-2.069 0-1.304-.99-1.799-2.654-2.608-2.023-.99-3.147-1.664-3.147-3.643 0-1.888 1.304-3.192 3.372-3.192h.315c1.844 0 3.013 1.079 3.013 1.709 0 .044-.045.09-.135.134l-.809.405h-.09c-.045 0-.09 0-.135-.09-.54-.584-.945-1.079-1.844-1.079h-.315a2.015 2.015 0 0 0-2.023 2.024Zm13.22-1.844h-2.338c-.135 0-.18.045-.18.18v10.747c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V27.642c0-.135-.045-.18-.18-.18h-2.338c-.135 0-.18-.045-.18-.18v-.72c0-.134.045-.18.18-.18h6.295c.135 0 .18.046.18.18v.675c0 .135-.045.18-.18.18Zm8.185 4.677c.764-.675 1.169-1.484 1.169-2.159v-.225c0-2.068-1.349-3.372-3.418-3.372h-3.777c-.135 0-.18.045-.18.18v11.781c0 .135.045.18.18.18h.899c.135 0 .18-.045.18-.18v-5.261c0-.135.045-.18.18-.18h2.428c.09.045.135.09.135.135l1.844 5.396a.62.62 0 0 0 .18.135h1.034c.09 0 .18-.045.18-.135 0-.045 0-.045.09-.045l-1.934-5.62v-.046c0-.18.36-.225.81-.584Zm-2.384-.36h-2.473c-.135 0-.18-.045-.18-.18v-3.957c0-.135.045-.18.18-.18h2.473c1.169 0 2.114.9 2.114 2.068v.135c0 1.214-.945 2.114-2.114 2.114Zm9.309 7.015h-.585c-2.068 0-3.373-1.304-3.373-3.193v-9.038c0-.135.045-.18.18-.18h.945c.135 0 .18.045.18.18v9.038c0 1.17.899 2.069 2.068 2.069h.585a2.092 2.092 0 0 0 2.068-2.069v-9.038c0-.135.045-.18.18-.18h.944c.135 0 .18.045.18.18v9.038c.045 1.889-1.304 3.193-3.372 3.193Zm11.332-2.159c0 .045-.09.09-.18.135h-.315c-.09 0-.135-.045-.18-.135l-3.238-7.69.135 9.444c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.899c.09 0 .135.09.18.136l3.463 8.184h.045l3.462-8.184c0-.045.09-.09.18-.135h.9c.135 0 .18.045.18.18v11.826c0 .135-.045.18-.18.18h-.9c-.135 0-.18-.045-.18-.18l.135-9.488-3.327 7.734ZM152.1 38.57h-6.386c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h6.386c.135 0 .18.046.18.18v.72c0 .135-.045.18-.18.18h-5.082c-.135 0-.18.045-.18.18v3.957c0 .135.045.18.18.18h4.182c.135 0 .18.045.18.18v.72c0 .134-.045.18-.18.18h-4.182c-.135 0-.18.044-.18.179v4.182c0 .135.045.18.18.18h5.082c.135 0 .18.09.18.18v.72c0 .224-.045.314-.18.314Zm10.252 0h-.854l-.18-.09-5.216-9.578h-.045l.09 9.488c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.854l.18.09 5.216 9.624h.045l-.135-9.534c0-.134.045-.18.18-.18h.944c.135 0 .18.046.18.18v11.827c0 .135-.045.225-.18.225Zm8.769-11.152h-2.338c-.135 0-.18.045-.18.18v10.747c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V27.642c0-.135-.045-.18-.18-.18h-2.338c-.135 0-.18-.045-.18-.18v-.72c0-.134.045-.18.18-.18h6.385c.135 0 .18.046.18.18v.675c-.045.135-.135.18-.27.18Zm2.833 1.844c0 .854.585 1.529 1.844 2.113.989.45 1.844.854 2.563 1.35.899.719 1.349 1.663 1.349 2.877 0 1.889-1.304 3.193-3.417 3.193h-.855c-1.844 0-3.013-1.08-3.013-1.709 0-.09.045-.135.135-.135l.81-.45h.09c.09 0 .09.045.134.09.54.585.945 1.08 1.844 1.08h.855c1.169 0 2.113-.9 2.113-2.069 0-1.304-.989-1.799-2.653-2.608-2.024-.99-3.148-1.664-3.148-3.643 0-1.888 1.304-3.192 3.373-3.192h.315c1.843 0 3.012 1.079 3.012 1.709 0 .044-.045.09-.134.134l-.81.405h-.09c-.045 0-.09 0-.135-.09-.539-.584-.944-1.079-1.843-1.079h-.315a2.015 2.015 0 0 0-2.024 2.024Z"/></symbol>
+    </svg>
+
+    <!-- ==== HEADER ==== -->
+    <header id="siteHeader">
+        <div class="container">
+            <div class="header-inner">
+                <a href="https://www.cs-instruments.com/us" target="_blank" class="logo-link" aria-label="CS INSTRUMENTS homepage">
+                    <svg class="logo" role="img" aria-label="CS INSTRUMENTS Logo">
+                        <use href="#cs-logo" xlink:href="#cs-logo"></use>
+                    </svg>
+                </a>
+                <a href="#early-access" class="btn"
+                   onclick="document.getElementById('early-access').scrollIntoView({behavior:'smooth'}); return false;">
+                    Get Early Access
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==== HERO ==== -->
+    <section class="hero" aria-label="VC 600 Coming Soon Hero">
+        <div class="hero-glow-tr" aria-hidden="true"></div>
+        <div class="hero-glow-bl" aria-hidden="true"></div>
+        <div class="container">
+            <div class="hero-grid">
+
+                <!-- Left: copy -->
+                <div class="hero-content">
+                    <span class="hero-badge">
+                        <i class="fa-solid fa-circle" style="font-size:0.55rem;" aria-hidden="true"></i>
+                        Coming Soon
+                    </span>
+                    <h1>Introducing the <span>VC 600</span></h1>
+                    <p class="hero-subtitle">Clamp-On Flow Meter for Compressed Air and Nitrogen</p>
+                    <p class="hero-desc">
+                        We're putting the finishing touches on something we think you'll love. The VC 600 is
+                        CS INSTRUMENTS' brand-new clamp-on flow meter -- no pipe cutting, no process
+                        interruption, and with built-in Bluetooth for wireless data access right from your smartphone.
+                    </p>
+                    <div class="hero-cta-row">
+                        <a href="#early-access" class="btn btn-lg"
+                           onclick="document.getElementById('early-access').scrollIntoView({behavior:'smooth'}); return false;">
+                            Get Early Access
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Right: teaser highlights -->
+                <div class="hero-teaser">
+                    <span class="teaser-label">What's coming</span>
+
+                    <div class="teaser-card">
+                        <div class="teaser-icon" aria-hidden="true">
+                            <i class="fa-solid fa-c"></i>
+                        </div>
+                        <div>
+                            <h4>Clamp-On Installation</h4>
+                            <p>No pipe cutting, no process interruption, no system shutdown. Simply clamp on and start measuring.</p>
+                        </div>
+                    </div>
+
+                    <div class="teaser-card">
+                        <div class="teaser-icon" aria-hidden="true">
+                            <i class="fa-brands fa-bluetooth"></i>
+                        </div>
+                        <div>
+                            <h4>Built-In Bluetooth</h4>
+                            <p>Access live flow data wirelessly from your smartphone. No cables, no laptop, no hassle.</p>
+                        </div>
+                    </div>
+
+                    <div class="teaser-card">
+                        <div class="teaser-icon" aria-hidden="true">
+                            <i class="fa-solid fa-wind"></i>
+                        </div>
+                        <div>
+                            <h4>Compressed Air and Nitrogen</h4>
+                            <p>Designed for both compressed air and nitrogen applications. One meter, multiple gases.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ==== EARLY ACCESS FORM ==== -->
+    <section class="form-section" id="early-access" aria-label="VC 600 early access registration">
+        <div class="container">
+            <div class="form-layout">
+
+                <!-- Left: copy + bullets -->
+                <div class="form-info reveal">
+                    <h2>Be the First to Know When the <span>VC 600</span> Launches</h2>
+                    <p>
+                        Leave your details and we'll reach out the moment specs, pricing, and
+                        availability are confirmed. No spam -- just the information you need to
+                        be first in line.
+                    </p>
+                    <div class="form-bullets">
+                        <div class="form-bullet">
+                            <div class="form-bullet-icon" aria-hidden="true">
+                                <i class="fa-solid fa-file-lines"></i>
+                            </div>
+                            <div class="form-bullet-text">
+                                <strong>Full Technical Specifications</strong>
+                                <p>You'll receive the complete datasheet the moment it's released -- straight to your inbox before it goes public.</p>
+                            </div>
+                        </div>
+                        <div class="form-bullet">
+                            <div class="form-bullet-icon" aria-hidden="true">
+                                <i class="fa-solid fa-tag"></i>
+                            </div>
+                            <div class="form-bullet-text">
+                                <strong>Pricing and Availability</strong>
+                                <p>Be among the first to know lead times and list pricing so you can plan and budget ahead of launch.</p>
+                            </div>
+                        </div>
+                        <div class="form-bullet">
+                            <div class="form-bullet-icon" aria-hidden="true">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+                            <div class="form-bullet-text">
+                                <strong>Direct Contact with Our US Team</strong>
+                                <p>Have questions about your specific application? Our US-based specialists are ready to help you evaluate the right fit.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="staytuned-line">
+                        <i class="fa-solid fa-bell" aria-hidden="true"></i>
+                        A true game changer is almost here. Stay tuned.
+                    </p>
+                </div>
+
+                <!-- Right: form card with real HubSpot embed -->
+                <div class="vc600-form-card reveal delay-2">
+                    <h3>Get Early Access</h3>
+                    <p class="form-sub-light">
+                        Be the first to receive specs, pricing, and availability updates for the VC 600.
+                        Leave your details and we'll reach out the moment it's ready.
+                    </p>
+                    <div class="hs-form-frame"
+                         data-region="na1"
+                         data-form-id="d0b604f3-4974-4164-9bc0-e10ff580ec1f"
+                         data-portal-id="43972642">
+                    </div>
+                    <p class="form-disclaimer-light">
+                        We respect your privacy. Your details are used only to keep you informed about the VC 600 launch.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== FOOTER ==== -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- Col 1: Logo -->
+                <div class="footer-col">
+                    <a href="https://www.cs-instruments.com/us" target="_blank" class="logo-link" aria-label="CS INSTRUMENTS homepage">
+                        <svg class="footer-logo" role="img" aria-label="CS INSTRUMENTS Logo">
+                            <use href="#cs-logo" xlink:href="#cs-logo"></use>
+                        </svg>
+                    </a>
+                </div>
+
+                <!-- Col 2: USA contact -->
+                <div class="footer-col">
+                    <div class="contact-item">
+                        <p>CS INSTRUMENTS USA INC.</p>
+                        <p>8237 Pinellas Drive</p>
+                        <p>Bluffton, South Carolina 29909, USA</p>
+                        <p style="margin-top:10px;">
+                            <a href="tel:+18435996700">
+                                <i class="fa-solid fa-phone" style="margin-right:6px;" aria-hidden="true"></i>+1 (843) 599 6700
+                            </a>
+                        </p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>RFQs / Billing / General:</h4>
+                        <p>
+                            <a href="mailto:info-us@cs-instruments.com">
+                                <i class="fa-solid fa-envelope" style="margin-right:6px;" aria-hidden="true"></i>info-us@cs-instruments.com
+                            </a>
+                        </p>
+                    </div>
+                    <div class="contact-item">
+                        <h4>Technical Support / Calibration:</h4>
+                        <p>
+                            <a href="mailto:support-us@cs-instruments.com">
+                                <i class="fa-solid fa-envelope" style="margin-right:6px;" aria-hidden="true"></i>support-us@cs-instruments.com
+                            </a>
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Col 3: Headquarters + social -->
+                <div class="footer-col">
+                    <div class="contact-item">
+                        <h4>Headquarter</h4>
+                        <p>Zindelsteiner Strasse 15</p>
+                        <p>D-78052 VS-Tannheim</p>
+                        <p style="margin-top:10px;">
+                            <a href="tel:+497705978990">
+                                <i class="fa-solid fa-phone" style="margin-right:6px;" aria-hidden="true"></i>+49 7705 978 99 0
+                            </a>
+                        </p>
+                        <p>
+                            <a href="mailto:info@cs-instruments.com">
+                                <i class="fa-solid fa-envelope" style="margin-right:6px;" aria-hidden="true"></i>info@cs-instruments.com
+                            </a>
+                        </p>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/cs_instruments_usa/" target="_blank"
+                           class="social-icon" aria-label="CS INSTRUMENTS USA on Instagram">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.facebook.com/share/1BZauUuTW4/" target="_blank"
+                           class="social-icon" aria-label="CS INSTRUMENTS USA on Facebook">
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/cs-instruments-usa/" target="_blank"
+                           class="social-icon" aria-label="CS INSTRUMENTS USA on LinkedIn">
+                            <i class="fa-brands fa-linkedin-in" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.youtube.com/channel/UCXd2PHrMidAJj3xIuSd0NKQ" target="_blank"
+                           class="social-icon" aria-label="CS INSTRUMENTS USA on YouTube">
+                            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div><!-- /.footer-grid -->
+
+            <div class="footer-bottom">
+                <a href="https://www.cs-instruments.com/us/legal/imprint" target="_blank">Imprint</a>
+                <a href="https://www.cs-instruments.com/us/legal/privacy-policy" target="_blank">Privacy policy</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==== FLOATING SCHEDULER WIDGET ==== -->
+    <div class="sidebar-widget-container" aria-label="Schedule a meeting">
+        <div class="scheduler-flyout" id="schedulerFlyout" role="dialog" aria-modal="false" aria-label="Book an appointment">
+            <button class="close-btn" onclick="toggleScheduler()" aria-label="Close scheduler">x</button>
+            <h3>Personal Advice</h3>
+            <p>Interested in the VC 600 or other CS INSTRUMENTS solutions? Let our team walk you through the options with no obligation.</p>
+            <a href="https://meetings.hubspot.com/martin-zeller/one-on-one?uuid=bce3b1bd-ea3d-4226-b9dd-4e5c7e395562"
+               target="_blank" class="book-now-link" aria-label="Book an appointment with CS INSTRUMENTS">
+                <button class="book-now-btn">
+                    <span>Book an Appointment Now</span>
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </button>
+            </a>
+        </div>
+        <div class="sidebar-widget-buttons">
+            <div class="scheduler-trigger-btn"
+                 onclick="toggleScheduler()"
+                 role="button" tabindex="0"
+                 aria-label="Open appointment scheduler"
+                 onkeydown="if(event.key==='Enter'||event.key===' ')toggleScheduler()">
+                <i class="fa-regular fa-calendar-days" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* Scheduler toggle */
+        function toggleScheduler() {
+            var flyout = document.getElementById('schedulerFlyout');
+            flyout.style.display = (flyout.style.display === 'block') ? 'none' : 'block';
+        }
+
+        /* Scroll reveal */
+        (function () {
+            var els = document.querySelectorAll('.reveal');
+            if (!('IntersectionObserver' in window)) {
+                els.forEach(function(el) { el.classList.add('is-visible'); });
+                return;
+            }
+            var obs = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.14, rootMargin: '0px 0px -40px 0px' });
+            els.forEach(function(el) { obs.observe(el); });
+        })();
+
+        /* Sticky header shadow */
+        (function () {
+            var header = document.getElementById('siteHeader');
+            if (!header) return;
+            function onScroll() { header.classList.toggle('scrolled', window.scrollY > 20); }
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
+        })();
+
+        /* Ripple effect on buttons */
+        (function () {
+            document.querySelectorAll('.btn').forEach(function(btn) {
+                btn.addEventListener('click', function(e) {
+                    var rect = btn.getBoundingClientRect();
+                    var size = Math.max(rect.width, rect.height);
+                    var ripple = document.createElement('span');
+                    ripple.className = 'ripple';
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+                    ripple.style.top  = (e.clientY - rect.top  - size / 2) + 'px';
+                    btn.appendChild(ripple);
+                    setTimeout(function() { ripple.remove(); }, 600);
+                });
+            });
+        })();
+    </script>
+
+</body>
+</html>
