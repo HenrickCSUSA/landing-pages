@@ -1,0 +1,607 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: CS INSTRUMENTS - Grand Opening Party
+  screenshotPath: ../images/templates/grand-opening-party.png
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_meta.html_title }}</title>
+    <meta name="description" content="{{ page_meta.meta_description }}">
+    <link rel="canonical" href="{{ content.absolute_url }}">
+
+ 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary:      #009b77;
+            --primary-dark: #007f61;
+            --mint:         #52ffd3;
+            --forest:       #0b3129;
+            --light-bg:     #f4f7f6;
+            --body-text:    #2d3748;
+            --muted-teal:   #b7d8cd;
+            --border:       #e2e8f0;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+        }
+
+        body { font-family: 'Inter', sans-serif; color: var(--body-text); line-height: 1.6; background: #ffffff; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+        /* REVEAL */
+        .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.8s cubic-bezier(0.22,1,0.36,1), transform 0.8s cubic-bezier(0.22,1,0.36,1); }
+        .reveal.is-visible { opacity: 1; transform: translateY(0); }
+        .reveal.delay-1 { transition-delay: 0.1s; }
+        .reveal.delay-2 { transition-delay: 0.2s; }
+        .reveal.delay-3 { transition-delay: 0.3s; }
+        .reveal.delay-4 { transition-delay: 0.4s; }
+
+        /* HEADER */
+        header {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: saturate(180%) blur(10px);
+            -webkit-backdrop-filter: saturate(180%) blur(10px);
+            padding: 15px 0 25px;
+            border-bottom: 4px solid var(--primary);
+            position: sticky; top: 0; z-index: 1000;
+            transition: box-shadow 0.3s ease, padding 0.3s ease;
+        }
+        header.scrolled { box-shadow: 0 6px 24px rgba(0,0,0,0.07); padding: 10px 0 18px; }
+        .header-row { display: flex; justify-content: space-between; align-items: center; }
+        .logo { height: 48px; width: auto; display: block; fill: #009b77; transition: transform 0.3s ease, opacity 0.3s ease; }
+        .logo-link:hover .logo { transform: scale(1.04); opacity: 0.9; }
+        .header-cta-wrap { display: flex; align-items: center; }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center;
+            padding: 16px 32px; background: var(--primary); color: #ffffff;
+            border: 2px solid var(--primary); border-radius: 6px;
+            font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 600;
+            text-decoration: none; cursor: pointer; position: relative; overflow: hidden;
+            transition: background 0.25s, border-color 0.25s, box-shadow 0.25s, transform 0.15s;
+            box-shadow: 0 4px 14px rgba(0,155,119,0.28);
+        }
+        .btn:hover { background: var(--primary-dark); border-color: var(--primary-dark); box-shadow: 0 6px 20px rgba(0,155,119,0.36); transform: translateY(-1px); }
+        .btn:active { transform: translateY(0); }
+        .btn-outline { background: transparent; color: var(--mint); border-color: var(--mint); box-shadow: none; }
+        .btn-outline:hover { background: var(--mint); color: var(--forest); border-color: var(--mint); box-shadow: 0 6px 20px rgba(82,255,211,0.3); }
+        .btn .ripple { position: absolute; border-radius: 50%; background: rgba(255,255,255,0.35); transform: scale(0); animation: rippleAnim 0.6s linear; }
+        @keyframes rippleAnim { to { transform: scale(4); opacity: 0; } }
+
+        /* HERO */
+        .hero-section {
+            background: linear-gradient(135deg, #0d3d30 0%, #0b3129 45%, #0f4a3a 100%);
+            padding: 80px 0 70px;
+            position: relative; overflow: hidden;
+        }
+        .hero-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 70% 50%, rgba(0,155,119,0.18) 0%, transparent 65%);
+            pointer-events: none;
+        }
+        .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+
+        .hero-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(82,255,211,0.12); border: 1px solid rgba(82,255,211,0.35);
+            border-radius: 50px; padding: 6px 16px;
+            font-size: 0.82rem; font-weight: 600; color: var(--mint);
+            letter-spacing: 0.5px; text-transform: uppercase; margin-bottom: 20px;
+            animation: heroFadeUp 0.7s ease both;
+        }
+        .hero-section h1 {
+            font-size: clamp(1.9rem, 3.2vw, 2.8rem); font-weight: 700;
+            color: #ffffff; line-height: 1.15; margin-bottom: 18px;
+            animation: heroFadeUp 0.7s 0.15s ease both;
+        }
+        .hero-section h1 span { color: var(--mint); }
+        .hero-sub {
+            font-size: 1.05rem; color: rgba(255,255,255,0.78);
+            line-height: 1.65; margin-bottom: 34px;
+            animation: heroFadeUp 0.7s 0.25s ease both;
+        }
+        .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; animation: heroFadeUp 0.7s 0.35s ease both; }
+
+        .hero-image-wrap {
+            animation: heroFadeUp 0.8s 0.2s ease both;
+            border-radius: 14px; overflow: hidden;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+        }
+        .hero-image-wrap img {
+            width: 100%; height: auto; display: block;
+            filter: drop-shadow(0 8px 24px rgba(0,0,0,0.3));
+        }
+
+        @keyframes heroFadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes gentleBob { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+
+        /* SECTION LABELS */
+        .section-label { font-size: 0.82rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 12px; display: block; }
+        .section-title { font-size: clamp(1.6rem, 2.5vw, 2.2rem); font-weight: 700; color: #1a202c; line-height: 1.25; margin-bottom: 14px; }
+        .section-sub { font-size: 1.05rem; color: #556068; max-width: 620px; margin: 0 auto 48px; }
+
+        /* EVENT DETAILS + AGENDA - combined two-column section */
+        .event-details-section { padding: 100px 0; background: var(--light-bg); }
+        .event-agenda-layout {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: start;
+        }
+        .event-card {
+            background: #ffffff; border-radius: 14px; padding: 36px 32px;
+            border-top: 4px solid var(--primary);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+            text-align: left;
+            height: 100%;
+        }
+        .event-icon {
+            width: 60px; height: 60px; background: rgba(0,155,119,0.10);
+            border-radius: 12px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.6rem; color: var(--primary); margin-bottom: 18px;
+        }
+        .event-card h3 { font-size: 1.1rem; font-weight: 700; color: #1a202c; margin-bottom: 10px; }
+        .event-card p { font-size: 0.95rem; color: #556068; line-height: 1.65; }
+        .event-card .date-highlight {
+            display: inline-block; margin-top: 12px;
+            font-size: 1.1rem; font-weight: 700; color: var(--primary);
+            background: rgba(0,155,119,0.08); border-radius: 6px; padding: 6px 14px;
+        }
+        .event-detail-row { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 22px; }
+        .event-detail-row:last-child { margin-bottom: 0; }
+        .event-detail-icon {
+            width: 40px; height: 40px; background: rgba(0,155,119,0.10);
+            border-radius: 10px; display: flex; align-items: center; justify-content: center;
+            font-size: 1.1rem; color: var(--primary); flex-shrink: 0; margin-top: 2px;
+        }
+        .event-detail-text h4 { font-size: 0.82rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+        .event-detail-text p { font-size: 0.95rem; color: #556068; line-height: 1.65; margin: 0; }
+        .event-detail-text .date-highlight {
+            display: inline-block; margin-top: 6px;
+            font-size: 1rem; font-weight: 700; color: var(--primary);
+            background: rgba(0,155,119,0.08); border-radius: 6px; padding: 4px 12px;
+        }
+
+        /* AGENDA CARD */
+        .agenda-card {
+            background: #ffffff; border-radius: 14px; padding: 36px 32px;
+            border-top: 4px solid var(--primary);
+            box-shadow: 0 6px 24px rgba(0,0,0,0.06);
+            text-align: left; height: 100%;
+        }
+        .agenda-card-title {
+            font-size: 1.15rem; font-weight: 700; color: #1a202c; margin-bottom: 20px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .agenda-card-title i { color: var(--primary); }
+        .agenda-divider { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+        .agenda-subsection-title {
+            font-size: 0.82rem; font-weight: 700; color: var(--primary);
+            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; display: block;
+        }
+        .agenda-item { display: flex; gap: 12px; margin-bottom: 10px; font-size: 0.92rem; color: #556068; }
+        .agenda-item-time { font-weight: 600; color: #1a202c; white-space: nowrap; min-width: 80px; }
+        .dress-code-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(0,155,119,0.08); border: 1px solid rgba(0,155,119,0.2);
+            border-radius: 6px; padding: 8px 14px; font-size: 0.92rem;
+            font-weight: 600; color: var(--primary); margin-bottom: 8px;
+        }
+        .agenda-note {
+            font-size: 0.85rem; color: #8a9aaa; font-style: italic; margin-top: 10px; line-height: 1.5;
+        }
+
+        @media (max-width: 968px) {
+            .event-agenda-layout { grid-template-columns: 1fr; }
+        }
+
+        /* REGISTRATION */
+        .registration-section { padding: 100px 0; background: var(--light-bg); }
+        .registration-intro { text-align: center; font-size: 1.05rem; color: #556068; max-width: 620px; margin: 0 auto 48px; }
+        .form-wrapper {
+            max-width: 700px; margin: 0 auto;
+            background: #ffffff; padding: 48px;
+            border-radius: 14px; box-shadow: 0 12px 40px rgba(11,49,41,0.10);
+            border-top: 4px solid var(--primary);
+        }
+
+        /* CTA SECTION */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #0d3d30 0%, #0b3129 100%);
+            position: relative; overflow: hidden; text-align: center;
+        }
+        .cta-section::before {
+            content: ''; position: absolute; inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(0,155,119,0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+        .cta-section h2 { font-size: clamp(1.8rem, 3vw, 2.6rem); font-weight: 700; color: #ffffff; margin-bottom: 16px; }
+        .cta-section p { font-size: 1.05rem; color: rgba(255,255,255,0.75); margin-bottom: 40px; }
+
+        /* FOOTER */
+        footer { background: var(--forest); color: #ffffff; padding: 70px 0 40px; font-size: 0.95rem; }
+        .footer-grid { display: grid; grid-template-columns: 1.2fr 1.5fr 1.3fr; gap: 40px; margin-bottom: 60px; }
+        .footer-logo { height: 45px; width: auto; margin-bottom: 12px; margin-left: 0; display: block; fill: #ffffff; transition: transform 0.3s, opacity 0.3s; }
+        .footer-logo:hover { transform: scale(1.05); opacity: 0.9; }
+        .footer-col h4 { font-size: 1.05rem; font-weight: 600; margin-bottom: 15px; color: #ffffff; }
+        .footer-col p { color: #cfe6de; margin-bottom: 8px; font-weight: 300; }
+        .footer-label { color: var(--muted-teal); font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .footer-col a { color: var(--mint); text-decoration: none; font-weight: 600; transition: color 0.2s; }
+        .footer-col a:hover { color: #ffffff; }
+        .contact-block { margin-bottom: 22px; }
+        .social-links { display: flex; gap: 10px; margin-top: 22px; }
+        .social-icon { width: 30px; height: 30px; background: #ffffff; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--forest) !important; font-size: 0.9rem; text-decoration: none; transition: background 0.25s, color 0.25s, transform 0.25s; }
+        .social-icon:hover { background: var(--primary); color: #ffffff !important; transform: translateY(-2px); }
+        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 28px; display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; }
+        .footer-bottom a { color: #ffffff; text-decoration: none; font-size: 0.92rem; transition: color 0.2s; }
+        .footer-bottom a:hover { color: var(--mint); text-decoration: underline; }
+
+        /* FLOATING SCHEDULER */
+        .sidebar-widget-container { position: fixed; right: 20px; bottom: 28px; z-index: 999; display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+        .scheduler-flyout { display: none; background: #ffffff; border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,0.18); padding: 28px 24px; width: 280px; border-top: 4px solid var(--primary); position: relative; }
+        .scheduler-flyout h3 { font-size: 1.05rem; font-weight: 700; color: #1a202c; margin-bottom: 8px; }
+        .scheduler-flyout p { font-size: 0.88rem; color: #556068; margin-bottom: 18px; }
+        .close-btn { position: absolute; top: 10px; right: 14px; background: none; border: none; font-size: 1.3rem; color: #a0aec0; cursor: pointer; line-height: 1; }
+        .book-now-btn { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px 20px; background: var(--primary); color: #ffffff; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 0.92rem; transition: background 0.2s; }
+        .book-now-btn:hover { background: var(--primary-dark); }
+        .scheduler-trigger { width: 56px; height: 56px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(0,155,119,0.4); cursor: pointer; border: none; transition: background 0.2s, transform 0.2s; }
+        .scheduler-trigger:hover { background: var(--primary-dark); transform: scale(1.07); }
+        .scheduler-trigger i { color: #ffffff; font-size: 1.3rem; }
+
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+            .hero-section h1 { font-size: 1.75rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+        @media (max-width: 640px) {
+            .hero-section { padding: 56px 0 48px; }
+            .event-details-section, .registration-section, .cta-section { padding: 60px 0; }
+            .form-wrapper { padding: 32px 20px; }
+            .sidebar-widget-container { right: 12px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==== INLINE SVG LOGO SYMBOL ==== -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <symbol id="cs-logo" viewBox="0 0 180 52"><path d="M.557 25.798c0 13.94 11.332 25.317 25.317 25.317v-8.274c-9.399 0-17.043-7.645-17.043-17.043S16.475 8.755 25.874 8.755V.525C11.934.526.557 11.859.557 25.799Zm28.6-1.799-.585 1.889c-1.35 4.317-3.193 4.317-3.957 4.317-2.159 0-3.643-1.574-3.643-3.777h-8.274c0 6.745 5.216 12.051 11.917 12.051 3.237 0 9.083-1.304 11.826-10.073l.585-1.889c.99-3.147 2.518-4.721 4.497-4.721 2.203 0 3.642 1.799 3.642 4.632h8.274c0-7.375-5.126-12.906-11.916-12.906-5.756-.045-10.253 3.777-12.367 10.477ZM67.2 37.04c0 .63-1.17 1.709-3.013 1.709h-.585c-2.068 0-3.372-1.304-3.372-3.193v-6.25c0-1.89 1.304-3.193 3.372-3.193h.585c1.798 0 3.013 1.034 3.013 1.709 0 .045-.045.134-.135.134l-.81.405h-.09c-.045 0-.09 0-.135-.09-.584-.584-.989-1.079-1.843-1.079h-.585c-1.17 0-2.068.9-2.068 2.069v6.25c0 1.17.899 2.069 2.068 2.069h.585c.45 0 .944-.18 1.259-.495.45-.405.584-.72.72-.72h.09l.809.405c.135.135.135.18.135.27Zm2.968-7.78c0 .855.584 1.53 1.843 2.114.99.45 1.844.854 2.563 1.35.9.719 1.35 1.663 1.35 2.877 0 1.889-1.305 3.193-3.418 3.193h-.855c-1.843 0-3.012-1.08-3.012-1.709 0-.09.044-.135.135-.135l.809-.45h.09c.09 0 .09.045.135.09.54.585.944 1.08 1.843 1.08h.855c1.169 0 2.113-.9 2.113-2.069 0-1.304-.989-1.799-2.653-2.608-2.023-.99-3.148-1.664-3.148-3.643 0-1.888 1.305-3.192 3.373-3.192h.315c1.844 0 3.013 1.079 3.013 1.709 0 .044-.045.09-.135.134l-.81.405h-.09c-.044 0-.09 0-.134-.09-.54-.584-.945-1.079-1.844-1.079h-.315c-1.124 0-2.023.854-2.023 2.024Zm14.3 9.309h-.9c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.9c.134 0 .18.046.18.18v11.827c0 .135-.046.225-.18.225Zm10.207 0h-.854l-.18-.09-5.216-9.578h-.045l.09 9.488c0 .135-.045.18-.18.18h-.9c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.855l.18.09 5.216 9.624h.045l-.135-9.534c0-.134.045-.18.18-.18h.944c.135 0 .18.046.18.18v11.827c.045.135-.045.225-.18.225Zm3.598-9.308c0 .854.584 1.529 1.843 2.113.99.45 1.844.854 2.564 1.35.899.719 1.349 1.663 1.349 2.877 0 1.889-1.304 3.193-3.418 3.193h-.854c-1.844 0-3.013-1.08-3.013-1.709 0-.09.045-.135.135-.135l.81-.45h.089c.09 0 .09.045.135.09.54.585.944 1.08 1.844 1.08h.854c1.169 0 2.114-.9 2.114-2.069 0-1.304-.99-1.799-2.654-2.608-2.023-.99-3.147-1.664-3.147-3.643 0-1.888 1.304-3.192 3.372-3.192h.315c1.844 0 3.013 1.079 3.013 1.709 0 .044-.045.09-.135.134l-.809.405h-.09c-.045 0-.09 0-.135-.09-.54-.584-.945-1.079-1.844-1.079h-.315a2.015 2.015 0 0 0-2.023 2.024Zm13.22-1.844h-2.338c-.135 0-.18.045-.18.18v10.747c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V27.642c0-.135-.045-.18-.18-.18h-2.338c-.135 0-.18-.045-.18-.18v-.72c0-.134.045-.18.18-.18h6.295c.135 0 .18.046.18.18v.675c0 .135-.045.18-.18.18Zm8.185 4.677c.764-.675 1.169-1.484 1.169-2.159v-.225c0-2.068-1.349-3.372-3.418-3.372h-3.777c-.135 0-.18.045-.18.18v11.781c0 .135.045.18.18.18h.899c.135 0 .18-.045.18-.18v-5.261c0-.135.045-.18.18-.18h2.428c.09.045.135.09.135.135l1.844 5.396a.62.62 0 0 0 .18.135h1.034c.09 0 .18-.045.18-.135 0-.045 0-.045.09-.045l-1.934-5.62v-.046c0-.18.36-.225.81-.584Zm-2.384-.36h-2.473c-.135 0-.18-.045-.18-.18v-3.957c0-.135.045-.18.18-.18h2.473c1.169 0 2.114.9 2.114 2.068v.135c0 1.214-.945 2.114-2.114 2.114Zm9.309 7.015h-.585c-2.068 0-3.373-1.304-3.373-3.193v-9.038c0-.135.045-.18.18-.18h.945c.135 0 .18.045.18.18v9.038c0 1.17.899 2.069 2.068 2.069h.585a2.092 2.092 0 0 0 2.068-2.069v-9.038c0-.135.045-.18.18-.18h.944c.135 0 .18.045.18.18v9.038c.045 1.889-1.304 3.193-3.372 3.193Zm11.332-2.159c0 .045-.09.09-.18.135h-.315c-.09 0-.135-.045-.18-.135l-3.238-7.69.135 9.444c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.899c.09 0 .135.09.18.136l3.463 8.184h.045l3.462-8.184c0-.045.09-.09.18-.135h.9c.135 0 .18.045.18.18v11.826c0 .135-.045.18-.18.18h-.9c-.135 0-.18-.045-.18-.18l.135-9.488-3.327 7.734ZM152.1 38.57h-6.386c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h6.386c.135 0 .18.046.18.18v.72c0 .135-.045.18-.18.18h-5.082c-.135 0-.18.045-.18.18v3.957c0 .135.045.18.18.18h4.182c.135 0 .18.045.18.18v.72c0 .134-.045.18-.18.18h-4.182c-.135 0-.18.044-.18.179v4.182c0 .135.045.18.18.18h5.082c.135 0 .18.09.18.18v.72c0 .224-.045.314-.18.314Zm10.252 0h-.854l-.18-.09-5.216-9.578h-.045l.09 9.488c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V26.517c0-.134.045-.18.18-.18h.854l.18.09 5.216 9.624h.045l-.135-9.534c0-.134.045-.18.18-.18h.944c.135 0 .18.046.18.18v11.827c0 .135-.045.225-.18.225Zm8.769-11.152h-2.338c-.135 0-.18.045-.18.18v10.747c0 .135-.045.18-.18.18h-.899c-.135 0-.18-.045-.18-.18V27.642c0-.135-.045-.18-.18-.18h-2.338c-.135 0-.18-.045-.18-.18v-.72c0-.134.045-.18.18-.18h6.385c.135 0 .18.046.18.18v.675c-.045.135-.135.18-.27.18Zm2.833 1.844c0 .854.585 1.529 1.844 2.113.989.45 1.844.854 2.563 1.35.899.719 1.349 1.663 1.349 2.877 0 1.889-1.304 3.193-3.417 3.193h-.855c-1.844 0-3.013-1.08-3.013-1.709 0-.09.045-.135.135-.135l.81-.45h.09c.09 0 .09.045.134.09.54.585.945 1.08 1.844 1.08h.855c1.169 0 2.113-.9 2.113-2.069 0-1.304-.989-1.799-2.653-2.608-2.024-.99-3.148-1.664-3.148-3.643 0-1.888 1.304-3.192 3.373-3.192h.315c1.843 0 3.012 1.079 3.012 1.709 0 .044-.045.09-.134.134l-.81.405h-.09c-.045 0-.09 0-.135-.09-.539-.584-.944-1.079-1.843-1.079h-.315a2.015 2.015 0 0 0-2.024 2.024Z"/></symbol>
+    </svg>
+
+    <!-- ==== HEADER ==== -->
+    <header id="site-header" role="banner">
+        <div class="container">
+            <div class="header-row">
+                <div class="logo-wrap">
+                    <a href="https://www.cs-instruments.com/us/" target="_blank" rel="noopener" class="logo-link" aria-label="CS INSTRUMENTS Homepage">
+                        <svg class="logo" role="img" aria-label="CS INSTRUMENTS Logo"><use href="#cs-logo" xlink:href="#cs-logo"></use></svg>
+                    </a>
+                </div>
+                <div class="header-cta-wrap">
+                    <a href="#registration" class="btn" style="padding:12px 24px; font-size:0.95rem;" aria-label="Register for CS INSTRUMENTS Grand Opening"
+                       onclick="document.getElementById('registration').scrollIntoView({behavior:'smooth'}); return false;">
+                        <i class="fa-solid fa-ticket" style="margin-right:8px;" aria-hidden="true"></i> Register Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==== HERO ==== -->
+    <section class="hero-section" aria-label="CS INSTRUMENTS Grand Opening Hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        Grand Opening Event
+                    </div>
+                    <h1>Join Us for Our<br><span>Grand Opening</span></h1>
+                    <p class="hero-sub">
+                        CS INSTRUMENTS is expanding into a new facility in Bluffton, SC. Celebrate this milestone with us.
+                    </p>
+                    <div class="hero-ctas">
+                        <a href="#registration" class="btn" aria-label="Register for the CS INSTRUMENTS Grand Opening event"
+                           onclick="document.getElementById('registration').scrollIntoView({behavior:'smooth'}); return false;">
+                            <i class="fa-solid fa-ticket" style="margin-right:10px;" aria-hidden="true"></i> Register for the Event
+                        </a>
+                        <a href="#event-details" class="btn btn-outline" aria-label="View event details"
+                           onclick="document.getElementById('event-details').scrollIntoView({behavior:'smooth'}); return false;">
+                            <i class="fa-solid fa-circle-info" style="margin-right:10px;" aria-hidden="true"></i> Event Details
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="hero-image-wrap">
+                        <img src="https://43972642.fs1.hubspotusercontent-na1.net/hubfs/43972642/Building%20Progress/AI%20072326.png"
+                             alt="CS INSTRUMENTS new facility in Bluffton, South Carolina">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== EVENT DETAILS + AGENDA ==== -->
+    <section id="event-details" class="event-details-section" aria-label="CS INSTRUMENTS Grand Opening Event Details">
+        <div class="container">
+            <div style="text-align:center;">
+                <span class="section-label reveal">Save the Date</span>
+                <h2 class="section-title reveal">Event Details &amp; Agenda</h2>
+                <p class="section-sub reveal delay-1">Everything you need to know about our Grand Opening celebration in Bluffton, SC.</p>
+            </div>
+            <div class="event-agenda-layout">
+
+                <!-- LEFT: Event Details (single card) -->
+                <div class="event-card reveal delay-1">
+                    <h3 style="font-size:1.25rem; margin-bottom:28px;">Grand Opening Details</h3>
+
+                    <div class="event-detail-row">
+                        <div class="event-detail-icon" aria-hidden="true"><i class="fa-solid fa-calendar-alt"></i></div>
+                        <div class="event-detail-text">
+                            <h4>When</h4>
+                            <p>Join us for a two-day celebration</p>
+                            <span class="date-highlight">November 18-19, 2026</span>
+                        </div>
+                    </div>
+
+                    <div class="event-detail-row">
+                        <div class="event-detail-icon" aria-hidden="true"><i class="fa-solid fa-map-marker-alt"></i></div>
+                        <div class="event-detail-text">
+                            <h4>Where</h4>
+                            <p>8237 Pinellas Dr, Building A<br>Bluffton, SC 29910</p>
+                        </div>
+                    </div>
+
+                    <div class="event-detail-row">
+                        <div class="event-detail-icon" aria-hidden="true"><i class="fa-solid fa-users"></i></div>
+                        <div class="event-detail-text">
+                            <h4>Who Will Attend</h4>
+                            <p>Partners, distributors, technical experts, and local community members</p>
+                        </div>
+                    </div>
+
+                    <div class="event-detail-row">
+                        <div class="event-detail-icon" aria-hidden="true"><i class="fa-solid fa-ticket"></i></div>
+                        <div class="event-detail-text">
+                            <h4>Admission</h4>
+                            <p>Complimentary - registration required.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RIGHT: Agenda & Details -->
+                <div class="agenda-card reveal delay-2">
+                    <div class="agenda-card-title">
+                        <i class="fa-solid fa-list-check" aria-hidden="true"></i> Agenda
+                    </div>
+
+                    <span class="agenda-subsection-title">Day 1 - Wednesday, November 18</span>
+                    <div class="agenda-item">
+                        <span class="agenda-item-time">8:30 AM</span>
+                        <span>Registration &amp; Welcome Table open, morning refreshments and networking</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="agenda-item-time">9:30 AM</span>
+                        <span>Welcome remarks and tour</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="agenda-item-time">10:00 AM</span>
+                        <span>Case studies &amp; Awards Presentation</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="agenda-item-time">12:30 PM</span>
+                        <span>Lunch</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="agenda-item-time">1:30 PM</span>
+                        <span>Presentations</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="agenda-item-time">4:30 PM</span>
+                        <span>Ribbon cutting ceremony</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="agenda-item-time">5:00 PM</span>
+                        <span>Dinner, an open bar, and a variety of activities throughout the evening</span>
+                    </div>
+
+                    <hr class="agenda-divider">
+
+                    <span class="agenda-subsection-title">Day 2 - Thursday, November 19</span>
+                    <div class="agenda-item">
+                        <span class="agenda-item-time">9:00 AM</span>
+                        <span>Free time or 1:1 meetings with the CS INSTRUMENTS US team</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="agenda-item-time">10:00 AM</span>
+                        <span>Guest speaker session</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="agenda-item-time">12:00 PM</span>
+                        <span>Lunch</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="agenda-item-time">1:00 PM</span>
+                        <span>Group trip to Indy Karting - go-kart racing, axe throwing &amp; arcade games</span>
+                    </div>
+                    <div class="agenda-item">
+                        <span class="agenda-item-time">Evening</span>
+                        <span>Dinner</span>
+                    </div>
+
+                    <hr class="agenda-divider">
+
+                    <span class="agenda-subsection-title">Dress Code</span>
+                    <div class="dress-code-badge" aria-label="Dress code: Business Casual">
+                        <i class="fa-solid fa-shirt" aria-hidden="true"></i> Business Casual
+                    </div>
+                    <p style="font-size:0.92rem; color:#556068; margin-top:6px;">Comfortable, professional attire recommended.</p>
+
+                    <hr class="agenda-divider">
+
+                    <span class="agenda-subsection-title">Hotel Booking</span>
+                    <p style="font-size:0.92rem; color:#556068; line-height:1.6; margin-bottom:10px;">To book your hotel room, please use the booking link below.</p>
+                    <p style="font-size:0.92rem; color:#556068; line-height:1.6; margin-bottom:10px;">Copy the link, open up a new web browser. Paste the link in the search bar and click enter. You don't have to go to the Best Western website.</p>
+                    <p style="font-size:0.92rem; color:#556068; line-height:1.6; margin-bottom:10px;">The link will take you directly to our hotel room block, where you can complete your reservation.</p>
+                    <div style="background:rgba(0,155,119,0.08); border:1px solid rgba(0,155,119,0.2); border-radius:6px; padding:12px; margin:12px 0;">
+                        <p style="font-size:0.88rem; color:var(--primary); font-weight:600; margin-bottom:6px;">Booking Link:</p>
+                        <p style="font-size:0.85rem; color:#556068; word-break:break-all; font-family:monospace;">https://www.bestwestern.com/en_US/book/hotel-rooms.41113.html?groupId=Q21CV5Y9</p>
+                    </div>
+                    <p style="font-size:0.92rem; color:#556068; line-height:1.6;">If you have any questions or need assistance with your reservation, please let us know.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== REGISTRATION ==== -->
+    <section id="registration" class="registration-section" aria-label="CS INSTRUMENTS Grand Opening Registration">
+        <div class="container" style="text-align:center;">
+            <span class="section-label reveal">Secure Your Spot</span>
+            <h2 class="section-title reveal">Register for the Event</h2>
+            <p class="registration-intro reveal delay-1">We look forward to welcoming you to our new home. Register today to guarantee your place at the celebration.</p>
+            <div class="form-wrapper reveal delay-2">
+                <script src="https://js.hsforms.net/forms/embed/43972642.js" defer></script>
+                <div class="hs-form-frame" data-region="na1" data-form-id="d9f78eae-9d02-4016-96a9-f8f975b0040f" data-portal-id="43972642"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==== CTA ==== -->
+    <section class="cta-section reveal" aria-label="CS INSTRUMENTS Contact">
+        <div class="container" style="position:relative; z-index:1;">
+            <h2>Questions About the Event?</h2>
+            <p>Our team is happy to help with anything you need.</p>
+            <a href="/cdn-cgi/l/email-protection#c2abaca4adefb7b182a1b1efabacb1b6b0b7afa7acb6b1eca1adaf" class="btn btn-outline" aria-label="Email CS INSTRUMENTS USA">
+                <i class="fa-solid fa-envelope" style="margin-right:10px;" aria-hidden="true"></i> Get in Touch
+            </a>
+        </div>
+    </section>
+
+    <!-- ==== FOOTER ==== -->
+    <footer aria-label="CS INSTRUMENTS Footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="https://www.cs-instruments.com/us/" target="_blank" rel="noopener" aria-label="CS INSTRUMENTS USA Homepage" style="display:block;">
+                        <svg class="footer-logo" role="img" aria-label="CS INSTRUMENTS Logo"><use href="#cs-logo" xlink:href="#cs-logo"></use></svg>
+                    </a>
+                    <p style="font-weight:600; color:#ffffff;">CS INSTRUMENTS USA INC.</p>
+                    <p>8237 Pinellas Drive</p>
+                    <p>Bluffton, SC 29910, USA</p>
+                    <nav class="social-links" aria-label="CS INSTRUMENTS Social Media">
+                        <a href="https://www.instagram.com/cs_instruments_usa/" target="_blank" rel="noopener" class="social-icon" aria-label="CS INSTRUMENTS USA on Instagram"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://www.facebook.com/share/1BZauUuTW4/" target="_blank" rel="noopener" class="social-icon" aria-label="CS INSTRUMENTS USA on Facebook"><i class="fa-brands fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="https://www.linkedin.com/company/cs-instruments-usa/" target="_blank" rel="noopener" class="social-icon" aria-label="CS INSTRUMENTS USA on LinkedIn"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a>
+                        <a href="https://www.youtube.com/channel/UCXd2PHrMidAJj3xIuSd0NKQ" target="_blank" rel="noopener" class="social-icon" aria-label="CS INSTRUMENTS USA on YouTube"><i class="fa-brands fa-youtube" aria-hidden="true"></i></a>
+                    </nav>
+                </div>
+                <div class="footer-col">
+                    <h4></h4>
+                    <div class="contact-block">
+                        <p class="footer-label">Phone</p>
+                        <a href="tel:+18435996700" aria-label="Call CS INSTRUMENTS USA">+1 (843) 599-6700</a>
+                    </div>
+                    <div class="contact-block">
+                        <p class="footer-label">RFQs / Billing / General information</p>
+                        <a href="mailto:info-us@cs-instruments.com">info-us@cs-instruments.com</a>
+                    </div>
+                    <div class="contact-block">
+                        <p class="footer-label">Technical support / Calibration inquiries</p>
+                        <a href="mailto:support-us@cs-instruments.com">support-us@cs-instruments.com</a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Headquarter</h4>
+                    <p>CS INSTRUMENTS GmbH & Co. KG</p>
+                    <p>Zindelsteiner Strasse 15</p>
+                    <p>D-78052 VS-Tannheim, Germany</p>
+                    <div class="contact-block" style="margin-top:16px;">
+                        <p class="footer-label">Phone</p>
+                        <a href="tel:+497705978990">+49 7705 978 99 0</a>
+                    </div>
+                    <div class="contact-block">
+                        <p class="footer-label">Headquater Email</p>
+                        <a href="mailto:info@cs-instruments.com">info@cs-instruments.com</a>
+                    </div>
+                </div>
+            </div>
+            <nav class="footer-bottom" aria-label="CS INSTRUMENTS Legal Links">
+                <a href="https://www.cs-instruments.com/us/legal/imprint" target="_blank" rel="noopener">Imprint</a>
+                <a href="https://www.cs-instruments.com/us/legal/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- ==== FLOATING SCHEDULER WIDGET ==== -->
+    <div class="sidebar-widget-container" role="complementary" aria-label="Quick Registration">
+        <div class="scheduler-flyout" id="schedulerFlyout" role="dialog" aria-modal="true" aria-label="Register for the Event">
+            <button class="close-btn" id="closeScheduler" aria-label="Close widget">x</button>
+            <h3>Don't Miss It!</h3>
+            <p>Secure your spot at our Grand Opening - November 18-19, 2026 in Bluffton, SC.</p>
+            <a href="#registration" class="book-now-btn" aria-label="Jump to registration form"
+               onclick="document.getElementById('registration').scrollIntoView({behavior:'smooth'}); return false;">
+                Register Now <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
+        </div>
+        <button class="scheduler-trigger" id="schedulerTrigger" aria-label="Open registration widget" aria-expanded="false" aria-controls="schedulerFlyout">
+            <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+        </button>
+    </div>
+
+   
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Header scroll effect
+        const header = document.getElementById('site-header');
+        window.addEventListener('scroll', () => { header.classList.toggle('scrolled', window.scrollY > 20); }, { passive: true });
+
+        // Scroll reveal
+        const revealEls = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); observer.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => observer.observe(el));
+
+        // Button ripple
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const r = document.createElement('span');
+                r.classList.add('ripple');
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                r.style.cssText = `width:${size}px;height:${size}px;left:${e.clientX-rect.left-size/2}px;top:${e.clientY-rect.top-size/2}px`;
+                this.appendChild(r);
+                setTimeout(() => r.remove(), 700);
+            });
+        });
+
+        // Floating widget
+        const trigger  = document.getElementById('schedulerTrigger');
+        const flyout   = document.getElementById('schedulerFlyout');
+        const closeBtn = document.getElementById('closeScheduler');
+        trigger.addEventListener('click', () => {
+            const open = flyout.style.display === 'block';
+            flyout.style.display = open ? 'none' : 'block';
+            trigger.setAttribute('aria-expanded', String(!open));
+        });
+        closeBtn.addEventListener('click', () => { flyout.style.display = 'none'; trigger.setAttribute('aria-expanded', 'false'); });
+        document.addEventListener('click', (e) => {
+            if (!trigger.contains(e.target) && !flyout.contains(e.target)) { flyout.style.display = 'none'; trigger.setAttribute('aria-expanded', 'false'); }
+        });
+    </script>
+</body>
+</html>
